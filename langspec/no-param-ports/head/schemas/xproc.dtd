@@ -83,6 +83,7 @@
 <!ENTITY % make-absolute-uris "%p;make-absolute-uris">
 <!ENTITY % namespace-rename "%p;namespace-rename">
 <!ENTITY % pack "%p;pack">
+<!ENTITY % parameters "%p;parameters">
 <!ENTITY % rename "%p;rename">
 <!ENTITY % replace "%p;replace">
 <!ENTITY % set-attributes "%p;set-attributes">
@@ -111,13 +112,13 @@
                   %count;|%delete;|%directory-list;|%error;|
                   %escape-markup;|%filter;|%http-request;|%identity;|
                   %insert;|%label-elements;|%load;|%make-absolute-uris;|
-                  %namespace-rename;|%pack;|%rename;|%replace;|
-                  %set-attributes;|%sink;|%split-sequence;|%store;|
-                  %string-replace;|%unescape-markup;|%unwrap;|%wrap;|
-                  %wrap-sequence;|%xinclude;|%xslt;|%exec;|
-                  %hash;|%uuid;|%validate-with-relax-ng;|%validate-with-schematron;|
-                  %validate-with-xml-schema;|%www-form-urldecode;|%www-form-urlencode;|%xquery;|
-                  %xsl-formatter; %user-steps;)">
+                  %namespace-rename;|%pack;|%parameters;|%rename;|
+                  %replace;|%set-attributes;|%sink;|%split-sequence;|
+                  %store;|%string-replace;|%unescape-markup;|%unwrap;|
+                  %wrap;|%wrap-sequence;|%xinclude;|%xslt;|
+                  %exec;|%hash;|%uuid;|%validate-with-relax-ng;|
+                  %validate-with-schematron;|%validate-with-xml-schema;|%www-form-urldecode;|%www-form-urlencode;|
+                  %xquery;|%xsl-formatter; %user-steps;)">
 <!ENTITY % annotation "%documentation;|%pipeinfo;">
 <!ENTITY % component
  "(%for-each;|%viewport;|%choose;|%group;|%try;|%step;)">
@@ -565,6 +566,9 @@
  wrapper %QName; #IMPLIED
  wrapper-prefix %NCName; #IMPLIED
  wrapper-namespace %URIref; #IMPLIED>
+<!ELEMENT %parameters; %step-model;>
+<!ATTLIST %parameters; %step-attrs;
+ parameters CDATA #IMPLIED>
 <!ELEMENT %rename; %step-model;>
 <!ATTLIST %rename; %step-attrs;
  match %XSLT_match_pattern; #IMPLIED

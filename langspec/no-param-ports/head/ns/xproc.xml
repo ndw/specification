@@ -212,6 +212,11 @@ For updated information, please refer to the latest version of the
    </listitem>
    <listitem>
       <simpara>
+         <link xlink:href="http://www.w3.org/TR/2010/REC-xproc-20100511/#f.make-map">p:make-map</link>
+      </simpara>
+   </listitem>
+   <listitem>
+      <simpara>
          <link xlink:href="http://www.w3.org/TR/2010/REC-xproc-20100511/#c.namespace-rename">p:namespace-rename</link>
       </simpara>
    </listitem>
@@ -233,6 +238,11 @@ For updated information, please refer to the latest version of the
    <listitem>
       <simpara>
          <link xlink:href="http://www.w3.org/TR/2010/REC-xproc-20100511/#c.pack">p:pack</link>
+      </simpara>
+   </listitem>
+   <listitem>
+      <simpara>
+         <link xlink:href="http://www.w3.org/TR/2010/REC-xproc-20100511/#c.parameters">p:parameters</link>
       </simpara>
    </listitem>
    <listitem>
