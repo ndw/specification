@@ -100,13 +100,16 @@ For updated information, please refer to the latest version of the
    <error code="XD0011">It is a dynamic error if the resource referenced by a p:document element does not exist, cannot be accessed, or is not a well-formed XML document.</error>
    <error code="XD0012">It is a dynamic error if any attempt is made to dereference a URI where the scheme of the URI reference is not supported.</error>
    <error code="XD0013">It is a dynamic error if the specified namespace bindings are inconsistent; that is, if the same prefix is bound to two different namespace names.</error>
+   <error code="XD0014">It is a dynamic error for any unqualified attribute names other than “name”, “namespace”, or “value” to appear on a c:param element.</error>
    <error code="XD0015">It is a dynamic error if the specified QName cannot be resolved with the in-scope namespace declarations.</error>
    <error code="XD0016">It is a dynamic error if the select expression on a p:input returns atomic values or anything other than element or document nodes (or an empty sequence).</error>
    <error code="XD0017">It is a dynamic error if the running pipeline attempts to invoke a step which the processor does not know how to perform.</error>
+   <error code="XD0018">It is a dynamic error if the parameter list contains any elements other than c:param.</error>
    <error code="XD0019">It is a dynamic error if any option value does not satisfy the type required for that option.</error>
    <error code="XD0020">It is a dynamic error if the combination of serialization options specified or defaulted is not allowed.</error>
    <error code="XD0021">It is a dynamic error for a pipeline to attempt to access a resource for which it has insufficient privileges or perform a step which is forbidden.</error>
    <error code="XD0022">It is a dynamic error if a processor that does not support PSVI annotations attempts to invoke a step which asserts that they are required.</error>
+   <error code="XD0025">It is a dynamic error if the namespace attribute is specified, the name contains a colon, and the specified namespace is not the same as the in-scope namespace binding for the specified prefix.</error>
    <error code="XD0026">It is a dynamic error if the select expression makes reference to the context node, size, or position when the context item is undefined.</error>
    <error code="XD0028">It is a dynamic error if any attribute value does not satisfy the type required for that attribute.</error>
    <error code="XD0029">It is a dynamic error if the document referenced by a p:data element does not exist, cannot be accessed, or cannot be encoded as specified.</error>

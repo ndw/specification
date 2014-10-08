@@ -2265,7 +2265,7 @@ or collections.</error>
           <para><type>QName</type>: With whitespace normalization as per <biblioref linkend="xmlschema-2"/> and according to the following definition: In the context of
             XProc, a <type>QName</type> is almost always a QName in the <glossterm>Namespaces in
               XML</glossterm> sense. Note, however, that <tag>p:option</tag> and
-              <tag>p:with-param</tag> values can get their namespace declarations in a non-standard
+              values can get their namespace declarations in a non-standard
             way (with <tag>p:namespaces</tag>) and QNames that have no prefix are always in
             no-namespace, irrespective of the default namespace. </para>
         </listitem>
@@ -3507,7 +3507,7 @@ option or variable are used.</para>
             <varname>divchild</varname> option on the call of that pipeline. It's not sufficient to
           provide just one of the sets of bindings.</para><para xml:id="p.namespaces">The
             <tag>p:namespaces</tag> element can be used as a child of <tag>p:variable</tag>,
-            <tag>p:with-option</tag> or <tag>p:with-param</tag> to provide explicit bindings.</para>
+            <tag>p:with-option</tag> to provide explicit bindings.</para>
         <e:rng-pattern name="Namespaces"/>
         <para>The namespace bindings specified by a <tag>p:namespaces</tag> element are determined
           as follows:</para><orderedlist>
@@ -3524,7 +3524,7 @@ option or variable are used.</para>
             <para>If the <tag class="attribute">element</tag> attribute is specified, it
                 <rfc2119>must</rfc2119> contain an XPath expression which identifies a single
               element node (the input connection for this expression is the same as the connection
-              for the <tag>p:option</tag> or <tag>p:with-param</tag> which contains it). The
+              for the <tag>p:option</tag> which contains it). The
               in-scope namespaces of that node are used.</para>
             <para>The expression is evaluated in the appropriate context, See <xref linkend="xpath-context"/>.</para>
             <para><error code="D0009">It is a <glossterm>dynamic error</glossterm> if the <tag class="attribute">element</tag> attribute on <tag>p:namespaces</tag> is specified
@@ -3548,10 +3548,10 @@ option or variable are used.</para>
               <tag class="attribute">binding</tag> and <tag class="attribute">element</tag> on the
             same <tag>p:namespaces</tag> element.</error>
         </para>
-<para>If a <tag>p:variable</tag>, <tag>p:with-option</tag> or <tag>p:with-param</tag>
+<para>If a <tag>p:variable</tag>, <tag>p:with-option</tag>
           includes one or more <tag>p:namespaces</tag> elements, then the union of all the
-          namespaces specified on those elements are used as the bindings for the variable or option value. In this case, the in-scope namespaces on the <tag>p:variable</tag>,
-            <tag>p:with-option</tag> or <tag>p:with-param</tag> are ignored. <error code="D0013">It
+          namespaces specified on those elements are used as the bindings for the variable or option value. In this case, the in-scope namespaces on the <tag>p:variable</tag> and
+            <tag>p:with-option</tag> are ignored. <error code="D0013">It
             is a <glossterm>dynamic error</glossterm> if the specified namespace bindings are
             inconsistent; that is, if the same prefix is bound to two different namespace
             names.</error></para>
@@ -6675,12 +6675,67 @@ as the order of the encoded parameters, reading from left to right.</para>
 the resulting parameter set will contain a <tag>c:param</tag> for
 each instance.</para>
 
-<para>FIXME: the c:param-set/c:param vocabulary needs to be described
-here because it's been removed elsewhere.</para>
-
 <para>FIXME: we need a function that takes an XML encoded c:param-set
 and returns a map.</para>
 
+<section xml:id="cv.param">
+<title>The c:param element</title>
+
+<para>A <tag>c:param</tag> represents a parameter on a parameter
+input.</para>
+
+<e:rng-pattern name="VocabParam"/>
+
+<para>The <tag class="attribute">name</tag> attribute of the
+<tag>c:param</tag> must have the lexical form of a QName.</para>
+
+<para>If the <tag class="attribute">namespace</tag> attribute is
+specified, then the expanded name of the parameter is constructed from
+the specified namespace and the <tag class="attribute">name</tag>
+value. <error code="D0025">It is a <glossterm>dynamic
+error</glossterm> if the <tag class="attribute">namespace</tag>
+attribute is specified, the <tag class="attribute">name</tag> contains
+a colon, and the specified namespace is not the same as the in-scope
+namespace binding for the specified prefix.</error>
+</para>
+
+<para>If the <tag class="attribute">namespace</tag> attribute is not
+specified, and the <tag class="attribute">name</tag> contains a colon,
+then the expanded name of the parameter is constructed using the <tag class="attribute">name</tag> value and the namespace declarations
+in-scope on the <tag>c:param</tag> element.</para>
+
+<para>If the <tag class="attribute">namespace</tag> attribute is not
+specified, and the <tag class="attribute">name</tag> does not contain
+a colon, then the expanded name of the parameter is in no
+namespace.</para>
+
+<para>Any namespace-qualified attribute names that appear on the
+<tag>c:param</tag> element are ignored. <error code="D0014">It is a
+<glossterm>dynamic error</glossterm> for any unqualified attribute
+names other than “<literal>name</literal>”,
+“<literal>namespace</literal>”, or “<literal>value</literal>” to
+appear on a <tag>c:param</tag> element.</error></para>
+</section>
+
+<section xml:id="cv.param-set">
+<title>The c:param-set element</title>
+
+<para>A <tag>c:param-set</tag> represents a set of parameters on a
+parameter input.</para>
+
+<e:rng-pattern name="VocabParamSet"/>
+
+<para>The <tag>c:param-set</tag> contains zero or more
+<tag>c:param</tag> elements. <error code="D0018">It is a
+<glossterm>dynamic error</glossterm> if the parameter list contains
+any elements other than <tag>c:param</tag>.</error></para>
+
+<para>Any namespace-qualified attribute names that appear on the
+<tag>c:param-set</tag> element are ignored. <error code="D0014">It is
+a <glossterm>dynamic error</glossterm> for any unqualified attribute
+names to appear on a <tag>c:param-set</tag>
+element.</error></para>
+</section>
 </section>
 
 <!-- ************************************************************************-->
@@ -7618,8 +7673,6 @@ P. Koopman. June 2002.
               <firstterm>namespace fixup</firstterm>.</para></glossdef></glossentry><glossentry><glossterm>option</glossterm><glossdef><para>An <firstterm>option</firstterm> is a name/value pair where
           the name is an <link xlink:href="http://www.w3.org/TR/REC-xml-names/#dt-expname">expanded
             name</link> and the value <rfc2119>must</rfc2119> be a string or
-            <type>xs:untypedAtomic</type>.</para></glossdef></glossentry><glossentry><glossterm>parameter</glossterm><glossdef><para>A <firstterm>parameter</firstterm> is a name/value pair
-          where the name is an <link xlink:href="http://www.w3.org/TR/REC-xml-names/#dt-expname">expanded name</link> and the value <rfc2119>must</rfc2119> be a string or
             <type>xs:untypedAtomic</type>.</para></glossdef></glossentry>
 <glossentry><glossterm>pipeline</glossterm><glossdef><para>A <firstterm>pipeline</firstterm> is a set of connected
         steps, with outputs of one step flowing into inputs of another.</para></glossdef></glossentry>

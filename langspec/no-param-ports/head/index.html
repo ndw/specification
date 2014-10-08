@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: An XML Pipeline Language</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.5" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="base.css" /><link rel="alternate" title="XML" href="langspec.xml" /><link rel="alternate" title="ChangeLog" href="changelog.html" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="https://docbook.github.com/release/2.0.5/base/css/prism.css" rel="stylesheet" /><link href="https://docbook.github.com/release/2.0.5/base/css/db-prism.css" rel="stylesheet" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1><div class="title">XProc 2.0: An XML Pipeline Language</div></h1><h2>W3C Editor's Draft  8 October 2014 at 11:44 UTC (<a href="https://github.com/ndw//specification/commit/c2d584ac3058f1aafb7ddcb8357c11cb7921015d">build 68</a>)</h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc/">http://www.w3.org/TR/xproc/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="langspec.xml">XML</a>, <a href="changelog.html">ChangeLog</a>, 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: An XML Pipeline Language</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.5" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="base.css" /><link rel="alternate" title="XML" href="langspec.xml" /><link rel="alternate" title="ChangeLog" href="changelog.html" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="https://docbook.github.com/release/2.0.5/base/css/prism.css" rel="stylesheet" /><link href="https://docbook.github.com/release/2.0.5/base/css/db-prism.css" rel="stylesheet" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1><div class="title">XProc 2.0: An XML Pipeline Language</div></h1><h2>W3C Editor's Draft  8 October 2014 at 12:15 UTC (<a href="https://github.com/ndw//specification/commit/1b6165e01befc3513409b5190c9ba04bd8c73710">build 69</a>)</h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc/">http://www.w3.org/TR/xproc/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="langspec.xml">XML</a>, <a href="changelog.html">ChangeLog</a>, 
 	  automatic <a href="diff.html">change markup</a> from the previous draft
           courtesy of <a href="http://www.deltaxml.com/">DeltaXML</a>.
         </p><p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
@@ -1940,7 +1940,7 @@ or collections.
           <p><code class="type">QName</code>: With whitespace normalization as per [<a href="#xmlschema-2"><span class="abbrev">W3C XML Schema: Part 2</span></a>] and according to the following definition: In the context of
             XProc, a <code class="type">QName</code> is almost always a QName in the <em class="glossterm"><a href="#dt-Namespaces-in-XML">Namespaces in
               XML</a></em> sense. Note, however, that <a href="#p.option"><code class="tag-element">p:option</code></a> and
-              <code class="tag-element">p:with-param</code> values can get their namespace declarations in a non-standard
+              values can get their namespace declarations in a non-standard
             way (with <a href="#p.namespaces"><code class="tag-element">p:namespaces</code></a>) and QNames that have no prefix are always in
             no-namespace, irrespective of the default namespace. </p>
         </li><li>
@@ -3146,7 +3146,7 @@ option or variable are used.</p>
             <code class="varname">divchild</code> option on the call of that pipeline. It's not sufficient to
           provide just one of the sets of bindings.</p><p id="p.namespaces">The
             <a href="#p.namespaces"><code class="tag-element">p:namespaces</code></a> element can be used as a child of <a href="#p.variable"><code class="tag-element">p:variable</code></a>,
-            <a href="#p.with-option"><code class="tag-element">p:with-option</code></a> or <code class="tag-element">p:with-param</code> to provide explicit bindings.</p>
+            <a href="#p.with-option"><code class="tag-element">p:with-option</code></a> to provide explicit bindings.</p>
         <p id="R.1" prefix="p" class="element-syntax element-syntax-language-construct"><code>&lt;p:namespaces<br />  binding? = <var>QName</var><br />  element? = <var>XPathExpression</var><br />  except-prefixes? = <var>prefix list</var> /&gt;</code></p>
         <p>The namespace bindings specified by a <a href="#p.namespaces"><code class="tag-element">p:namespaces</code></a> element are determined
           as follows:</p><div class="orderedlist">
@@ -3165,7 +3165,7 @@ option or variable are used.</p>
             <p>If the <code class="tag-attribute">element</code> attribute is specified, it
                 <span class="rfc2119" id="opt-bindings.16.2.1.2">must</span> contain an XPath expression which identifies a single
               element node (the input connection for this expression is the same as the connection
-              for the <a href="#p.option"><code class="tag-element">p:option</code></a> or <code class="tag-element">p:with-param</code> which contains it). The
+              for the <a href="#p.option"><code class="tag-element">p:option</code></a> which contains it). The
               in-scope namespaces of that node are used.</p>
             <p>The expression is evaluated in the appropriate context, See <a href="#xpath-context" title="XPaths in XProc">Section 2.6, “XPaths in XProc”</a>.</p>
             <p><a name="err.inline.D0009"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0009"><code class="errqname">err:XD0009</code></a>) if the <code class="tag-attribute">element</code> attribute on <a href="#p.namespaces"><code class="tag-element">p:namespaces</code></a> is specified
@@ -3187,10 +3187,10 @@ option or variable are used.</p>
               <code class="tag-attribute">binding</code> and <code class="tag-attribute">element</code> on the
             same <a href="#p.namespaces"><code class="tag-element">p:namespaces</code></a> element.
         </p>
-<p>If a <a href="#p.variable"><code class="tag-element">p:variable</code></a>, <a href="#p.with-option"><code class="tag-element">p:with-option</code></a> or <code class="tag-element">p:with-param</code>
+<p>If a <a href="#p.variable"><code class="tag-element">p:variable</code></a>, <a href="#p.with-option"><code class="tag-element">p:with-option</code></a>
           includes one or more <a href="#p.namespaces"><code class="tag-element">p:namespaces</code></a> elements, then the union of all the
-          namespaces specified on those elements are used as the bindings for the variable or option value. In this case, the in-scope namespaces on the <a href="#p.variable"><code class="tag-element">p:variable</code></a>,
-            <a href="#p.with-option"><code class="tag-element">p:with-option</code></a> or <code class="tag-element">p:with-param</code> are ignored. <a name="err.inline.D0013"></a>It
+          namespaces specified on those elements are used as the bindings for the variable or option value. In this case, the in-scope namespaces on the <a href="#p.variable"><code class="tag-element">p:variable</code></a> and
+            <a href="#p.with-option"><code class="tag-element">p:with-option</code></a> are ignored. <a name="err.inline.D0013"></a>It
             is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0013"><code class="errqname">err:XD0013</code></a>) if the specified namespace bindings are
             inconsistent; that is, if the same prefix is bound to two different namespace
             names.</p>
@@ -6057,9 +6057,9 @@ by the XML Schema recommendation.</p>
 <p>The <code class="option">value</code> option is interpreted as a string of
 parameter values encoded using the
 <code class="literal">x-www-form-urlencoded</code> algorithm. Each name/value
-pair is written in a <code class="tag-element">c:param</code> element.
+pair is written in a <a href="#cv.param"><code class="tag-element">c:param</code></a> element.
 The entire set of parameters
-is written (as a <code class="tag-element">c:param-set</code>) on the <code class="port">result</code>
+is written (as a <a href="#cv.param-set"><code class="tag-element">c:param-set</code></a>) on the <code class="port">result</code>
 output port.</p>
 
 <p><a name="err.inline.C0037"></a>It is a
@@ -6073,19 +6073,74 @@ step can only decode simple name/value pairs where the names do not contain
 colons or any characters that cannot be used in XML names.
 </p>
 
-<p>The order of the <code class="tag-element">c:param</code> elements in the result is the same
+<p>The order of the <a href="#cv.param"><code class="tag-element">c:param</code></a> elements in the result is the same
 as the order of the encoded parameters, reading from left to right.</p>
 
 <p>If any parameter name occurs more than once in the encoded string,
-the resulting parameter set will contain a <code class="tag-element">c:param</code> for
+the resulting parameter set will contain a <a href="#cv.param"><code class="tag-element">c:param</code></a> for
 each instance.</p>
-
-<p>FIXME: the c:param-set/c:param vocabulary needs to be described
-here because it's been removed elsewhere.</p>
 
 <p>FIXME: we need a function that takes an XML encoded c:param-set
 and returns a map.</p>
 
+<section id="cv.param" class="section"><div class="section-titlepage"><h5>23.2.7.1 The c:param element</h5></div>
+
+
+<p>A <code class="tag-element">c:param</code> represents a parameter on a parameter
+input.</p>
+
+<p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:param<br />  <strong>name</strong> = <var>QName</var><br />  namespace? = <var>anyURI</var><br />  <strong>value</strong> = <var>string</var> /&gt;</code></p>
+
+<p>The <code class="tag-attribute">name</code> attribute of the
+<code class="tag-element">c:param</code> must have the lexical form of a QName.</p>
+
+<p>If the <code class="tag-attribute">namespace</code> attribute is
+specified, then the expanded name of the parameter is constructed from
+the specified namespace and the <code class="tag-attribute">name</code>
+value. <a name="err.inline.D0025"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
+error</a></em> (<a href="#err.D0025"><code class="errqname">err:XD0025</code></a>) if the <code class="tag-attribute">namespace</code>
+attribute is specified, the <code class="tag-attribute">name</code> contains
+a colon, and the specified namespace is not the same as the in-scope
+namespace binding for the specified prefix.
+</p>
+
+<p>If the <code class="tag-attribute">namespace</code> attribute is not
+specified, and the <code class="tag-attribute">name</code> contains a colon,
+then the expanded name of the parameter is constructed using the <code class="tag-attribute">name</code> value and the namespace declarations
+in-scope on the <code class="tag-element">c:param</code> element.</p>
+
+<p>If the <code class="tag-attribute">namespace</code> attribute is not
+specified, and the <code class="tag-attribute">name</code> does not contain
+a colon, then the expanded name of the parameter is in no
+namespace.</p>
+
+<p>Any namespace-qualified attribute names that appear on the
+<code class="tag-element">c:param</code> element are ignored. <a name="err.inline.D0014"></a>It is a
+<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0014"><code class="errqname">err:XD0014</code></a>) for any unqualified attribute
+names other than “<code class="literal">name</code>”,
+“<code class="literal">namespace</code>”, or “<code class="literal">value</code>” to
+appear on a <code class="tag-element">c:param</code> element.</p>
+</section>
+
+<section id="cv.param-set" class="section"><div class="section-titlepage"><h5>23.2.7.2 The c:param-set element</h5></div>
+
+
+<p>A <code class="tag-element">c:param-set</code> represents a set of parameters on a
+parameter input.</p>
+
+<p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:param-set&gt;<br />    <a href="#cv.param">c:param</a>*<br />&lt;/c:param-set&gt;</code></p>
+
+<p>The <code class="tag-element">c:param-set</code> contains zero or more
+<a href="#cv.param"><code class="tag-element">c:param</code></a> elements. <a name="err.inline.D0018"></a>It is a
+<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0018"><code class="errqname">err:XD0018</code></a>) if the parameter list contains
+any elements other than <a href="#cv.param"><code class="tag-element">c:param</code></a>.</p>
+
+<p>Any namespace-qualified attribute names that appear on the
+<code class="tag-element">c:param-set</code> element are ignored. <a name="err.inline.D0014.1"></a>It is
+a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0014"><code class="errqname">err:XD0014</code></a>) for any unqualified attribute
+names to appear on a <code class="tag-element">c:param-set</code>
+element.</p>
+</section>
 </section>
 
 
@@ -7038,34 +7093,32 @@ P. Koopman. June 2002.
               <em class="firstterm">namespace fixup</em>.</p></dd><dt id="glossary.2.28" class="glossentry"><em class="glossterm"><a href="#dt-option">option</a></em></dt><dd class="glossdef"><p>An <em class="firstterm">option</em> is a name/value pair where
           the name is an <a href="http://www.w3.org/TR/REC-xml-names/#dt-expname">expanded
             name</a> and the value <span class="rfc2119" id="glossary.2.28.2.1.3">must</span> be a string or
-            <code class="type">xs:untypedAtomic</code>.</p></dd><dt id="glossary.2.29" class="glossentry"><em class="glossterm">parameter</em></dt><dd class="glossdef"><p>A <em class="firstterm">parameter</em> is a name/value pair
-          where the name is an <a href="http://www.w3.org/TR/REC-xml-names/#dt-expname">expanded name</a> and the value <span class="rfc2119" id="glossary.2.29.2.1.3">must</span> be a string or
-            <code class="type">xs:untypedAtomic</code>.</p></dd><dt id="glossary.2.30" class="glossentry"><em class="glossterm"><a href="#dt-pipeline">pipeline</a></em></dt><dd class="glossdef"><p>A <em class="firstterm">pipeline</em> is a set of connected
-        steps, with outputs of one step flowing into inputs of another.</p></dd><dt id="glossary.2.31" class="glossentry"><em class="glossterm"><a href="#dt-primary-input-port">primary input
+            <code class="type">xs:untypedAtomic</code>.</p></dd><dt id="glossary.2.29" class="glossentry"><em class="glossterm"><a href="#dt-pipeline">pipeline</a></em></dt><dd class="glossdef"><p>A <em class="firstterm">pipeline</em> is a set of connected
+        steps, with outputs of one step flowing into inputs of another.</p></dd><dt id="glossary.2.30" class="glossentry"><em class="glossterm"><a href="#dt-primary-input-port">primary input
             port</a></em></dt><dd class="glossdef"><p>If a step has a document input port which is
           explicitly marked “<code class="code">primary='true'</code>”, or if it has exactly one document input
           port and that port is <em>not</em> explicitly marked
             “<code class="code">primary='false'</code>”, then that input port is the <em class="firstterm">primary input
-            port</em> of the step.</p></dd><dt id="glossary.2.32" class="glossentry"><em class="glossterm"><a href="#dt-primary-output-port">primary output
+            port</em> of the step.</p></dd><dt id="glossary.2.31" class="glossentry"><em class="glossterm"><a href="#dt-primary-output-port">primary output
             port</a></em></dt><dd class="glossdef"><p>If a step has a document output port which is
           explicitly marked “<code class="code">primary='true'</code>”, or if it has exactly one document output
           port and that port is <em>not</em> explicitly marked
             “<code class="code">primary='false'</code>”, then that output port is the <em class="firstterm">primary output
-            port</em> of the step.</p></dd><dt id="glossary.2.33" class="glossentry"><em class="glossterm"><a href="#dt-readable-ports">readable
+            port</em> of the step.</p></dd><dt id="glossary.2.32" class="glossentry"><em class="glossterm"><a href="#dt-readable-ports">readable
                 ports</a></em></dt><dd class="glossdef"><p>The <em class="firstterm">readable
-                ports</em> are a set of step name/port name pairs.</p></dd><dt id="glossary.2.34" class="glossentry"><em class="glossterm"><a href="#dt-signature">signature</a></em></dt><dd class="glossdef"><p>The <em class="firstterm">signature</em> of a step is the set
-          of inputs, outputs, and options that it is declared to accept.</p></dd><dt id="glossary.2.35" class="glossentry"><em class="glossterm"><a href="#dt-specified-options">specified
+                ports</em> are a set of step name/port name pairs.</p></dd><dt id="glossary.2.33" class="glossentry"><em class="glossterm"><a href="#dt-signature">signature</a></em></dt><dd class="glossdef"><p>The <em class="firstterm">signature</em> of a step is the set
+          of inputs, outputs, and options that it is declared to accept.</p></dd><dt id="glossary.2.34" class="glossentry"><em class="glossterm"><a href="#dt-specified-options">specified
           options</a></em></dt><dd class="glossdef"><p>The options on a step which have specified
           values, either because a <a href="#p.with-option"><code class="tag-element">p:with-option</code></a> element specifies a value or because the
           declaration included a default value, are its <em class="firstterm">specified
-          options</em>.</p></dd><dt id="glossary.2.36" class="glossentry"><em class="glossterm"><a href="#dt-static-error">static error</a></em></dt><dd class="glossdef"><p>A <em class="firstterm">static error</em> is one which can
-          be detected before pipeline evaluation is even attempted.</p></dd><dt id="glossary.2.37" class="glossentry"><em class="glossterm"><a href="#dt-step">step</a></em></dt><dd class="glossdef"><p>A <em class="firstterm">step</em> is the basic computational unit
-          of a pipeline.</p></dd><dt id="glossary.2.38" class="glossentry"><em class="glossterm"><a href="#dt-step-type-exports">step type exports</a></em></dt><dd class="glossdef"><p>The <em class="firstterm">step type exports</em> of an
+          options</em>.</p></dd><dt id="glossary.2.35" class="glossentry"><em class="glossterm"><a href="#dt-static-error">static error</a></em></dt><dd class="glossdef"><p>A <em class="firstterm">static error</em> is one which can
+          be detected before pipeline evaluation is even attempted.</p></dd><dt id="glossary.2.36" class="glossentry"><em class="glossterm"><a href="#dt-step">step</a></em></dt><dd class="glossdef"><p>A <em class="firstterm">step</em> is the basic computational unit
+          of a pipeline.</p></dd><dt id="glossary.2.37" class="glossentry"><em class="glossterm"><a href="#dt-step-type-exports">step type exports</a></em></dt><dd class="glossdef"><p>The <em class="firstterm">step type exports</em> of an
         XProc element, against the background of a set of URIs of resources already visited (call
-        this set <em>Visited</em>), are defined by cases.</p></dd><dt id="glossary.2.39" class="glossentry"><em class="glossterm"><a href="#dt-subpipeline">subpipeline</a></em></dt><dd class="glossdef"><p>Sibling steps (and the connections between them) form a
-            <em class="firstterm">subpipeline</em>.</p></dd><dt id="glossary.2.40" class="glossentry"><em class="glossterm"><a href="#dt-variable">variable</a></em></dt><dd class="glossdef"><p>A <em class="firstterm">variable</em> is a name/value pair
-          where the name is an <a href="http://www.w3.org/TR/REC-xml-names/#dt-expname">expanded name</a> and the value <span class="rfc2119" id="glossary.2.40.2.1.3">must</span> be a string or
-            <code class="type">xs:untypedAtomic</code>.</p></dd><dt id="glossary.2.41" class="glossentry"><em class="glossterm"><a href="#dt-visible">visible</a></em></dt><dd class="glossdef"><p>If two names are in the same scope, we say that they
+        this set <em>Visited</em>), are defined by cases.</p></dd><dt id="glossary.2.38" class="glossentry"><em class="glossterm"><a href="#dt-subpipeline">subpipeline</a></em></dt><dd class="glossdef"><p>Sibling steps (and the connections between them) form a
+            <em class="firstterm">subpipeline</em>.</p></dd><dt id="glossary.2.39" class="glossentry"><em class="glossterm"><a href="#dt-variable">variable</a></em></dt><dd class="glossdef"><p>A <em class="firstterm">variable</em> is a name/value pair
+          where the name is an <a href="http://www.w3.org/TR/REC-xml-names/#dt-expname">expanded name</a> and the value <span class="rfc2119" id="glossary.2.39.2.1.3">must</span> be a string or
+            <code class="type">xs:untypedAtomic</code>.</p></dd><dt id="glossary.2.40" class="glossentry"><em class="glossterm"><a href="#dt-visible">visible</a></em></dt><dd class="glossdef"><p>If two names are in the same scope, we say that they
           are <em class="firstterm">visible</em> to each other. </p></dd></dl></div></article>
   <article id="language-summary" class="appendix"><header class="appendix-titlepage"><h2>D Pipeline Language Summary</h2></header>
 
@@ -7091,7 +7144,7 @@ and
 
 <p>And the step vocabulary elements.</p>
 
-<p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:data<br />  content-type? = <var>string</var><br />  charset? = <var>string</var><br />  encoding? = <var>string</var>&gt;<br />    <var>string</var><br />&lt;/c:data&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:result&gt;<br />    <var>string</var><br />&lt;/c:result&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:directory<br />  <strong>name</strong> = <var>string</var>&gt;<br />    (<a href="#cv.file">c:file</a> | <br />     <a href="#cv.directory">c:directory</a> | <br />     <a href="#cv.other">c:other</a>)*<br />&lt;/c:directory&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:file<br />  <strong>name</strong> = <var>string</var> /&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:other<br />  <strong>name</strong> = <var>string</var> /&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:request<br />  <strong>method</strong> = <var>NCName</var><br />  href? = <var>anyURI</var><br />  detailed? = <var>boolean</var><br />  status-only? = <var>boolean</var><br />  username? = <var>string</var><br />  password? = <var>string</var><br />  auth-method? = <var>string</var><br />  send-authorization? = <var>boolean</var><br />  override-content-type? = <var>string</var>&gt;<br />    (<a href="#cv.header">c:header</a>*,<br />     (<a href="#cv.multipart">c:multipart</a> | <br />      <a href="#cv.body">c:body</a>)?)<br />&lt;/c:request&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:header<br />  <strong>name</strong> = <var>string</var><br />  <strong>value</strong> = <var>string</var> /&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:multipart<br />  <strong>content-type</strong> = <var>string</var><br />  <strong>boundary</strong> = <var>string</var>&gt;<br />    <a href="#cv.body">c:body</a>+<br />&lt;/c:multipart&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:body<br />  <strong>content-type</strong> = <var>string</var><br />  encoding? = <var>string</var><br />  id? = <var>string</var><br />  description? = <var>string</var><br />  disposition? = <var>string</var>&gt;<br />    <var>anyElement</var>*<br />&lt;/c:body&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:response<br />  status? = <var>integer</var>&gt;<br />    (<a href="#cv.header">c:header</a>*,<br />     (<a href="#cv.multipart">c:multipart</a> | <br />      <a href="#cv.body">c:body</a>)?)<br />&lt;/c:response&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:line&gt;<br />    <var>string</var><br />&lt;/c:line&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:query&gt;<br />    <var>string</var><br />&lt;/c:query&gt;</code></p>
+<p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:data<br />  content-type? = <var>string</var><br />  charset? = <var>string</var><br />  encoding? = <var>string</var>&gt;<br />    <var>string</var><br />&lt;/c:data&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:result&gt;<br />    <var>string</var><br />&lt;/c:result&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:directory<br />  <strong>name</strong> = <var>string</var>&gt;<br />    (<a href="#cv.file">c:file</a> | <br />     <a href="#cv.directory">c:directory</a> | <br />     <a href="#cv.other">c:other</a>)*<br />&lt;/c:directory&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:file<br />  <strong>name</strong> = <var>string</var> /&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:other<br />  <strong>name</strong> = <var>string</var> /&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:request<br />  <strong>method</strong> = <var>NCName</var><br />  href? = <var>anyURI</var><br />  detailed? = <var>boolean</var><br />  status-only? = <var>boolean</var><br />  username? = <var>string</var><br />  password? = <var>string</var><br />  auth-method? = <var>string</var><br />  send-authorization? = <var>boolean</var><br />  override-content-type? = <var>string</var>&gt;<br />    (<a href="#cv.header">c:header</a>*,<br />     (<a href="#cv.multipart">c:multipart</a> | <br />      <a href="#cv.body">c:body</a>)?)<br />&lt;/c:request&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:header<br />  <strong>name</strong> = <var>string</var><br />  <strong>value</strong> = <var>string</var> /&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:multipart<br />  <strong>content-type</strong> = <var>string</var><br />  <strong>boundary</strong> = <var>string</var>&gt;<br />    <a href="#cv.body">c:body</a>+<br />&lt;/c:multipart&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:body<br />  <strong>content-type</strong> = <var>string</var><br />  encoding? = <var>string</var><br />  id? = <var>string</var><br />  description? = <var>string</var><br />  disposition? = <var>string</var>&gt;<br />    <var>anyElement</var>*<br />&lt;/c:body&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:response<br />  status? = <var>integer</var>&gt;<br />    (<a href="#cv.header">c:header</a>*,<br />     (<a href="#cv.multipart">c:multipart</a> | <br />      <a href="#cv.body">c:body</a>)?)<br />&lt;/c:response&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:line&gt;<br />    <var>string</var><br />&lt;/c:line&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:param<br />  <strong>name</strong> = <var>QName</var><br />  namespace? = <var>anyURI</var><br />  <strong>value</strong> = <var>string</var> /&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:param-set&gt;<br />    <a href="#cv.param">c:param</a>*<br />&lt;/c:param-set&gt;</code></p><p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:query&gt;<br />    <var>string</var><br />&lt;/c:query&gt;</code></p>
 
 </article>
   <article id="errors-list" class="appendix"><header class="appendix-titlepage"><h2>E List of Error Codes</h2></header><div class="toc"><h2 id="TableOfContents">Table of Contents</h2><ul class="toc"><li><span>1 <a href="#app.static-errors">Static Errors</a></span></li><li><span>2 <a href="#app.dynamic-errors">Dynamic Errors</a></span></li><li><span>3 <a href="#app.step-errors">Step Errors</a></span></li></ul></div>
@@ -7233,19 +7286,29 @@ are defined:</p>
               supported.</p><p>See: <a href="#err.inline.D0012">Common errors</a></p></dd><dt><a name="err.D0013"></a><code class="errqname">err:XD0013</code></dt><dd><p>It
             is a dynamic error if the specified namespace bindings are
             inconsistent; that is, if the same prefix is bound to two different namespace
-            names.</p><p>See: <a href="#err.inline.D0013">Namespaces on variables and options</a></p></dd><dt><a name="err.D0015"></a><code class="errqname">err:XD0015</code></dt><dd><p>It is a dynamic error if the specified QName cannot
+            names.</p><p>See: <a href="#err.inline.D0013">Namespaces on variables and options</a></p></dd><dt><a name="err.D0014"></a><code class="errqname">err:XD0014</code></dt><dd><p>It is a
+dynamic error for any unqualified attribute
+names other than “name”,
+“namespace”, or “value” to
+appear on a c:param element.</p><p>See: <a href="#err.inline.D0014">The c:param element</a>, <a href="#err.inline.D0014.1">The c:param-set element</a></p></dd><dt><a name="err.D0015"></a><code class="errqname">err:XD0015</code></dt><dd><p>It is a dynamic error if the specified QName cannot
             be resolved with the in-scope namespace declarations.</p><p>See: <a href="#err.inline.D0015">System Properties</a></p></dd><dt><a name="err.D0016"></a><code class="errqname">err:XD0016</code></dt><dd><p>It is a dynamic error if the select expression on a p:input
 returns atomic values or anything other than element or document
 nodes (or an empty sequence).</p><p>See: <a href="#err.inline.D0016">p:input</a></p></dd><dt><a name="err.D0017"></a><code class="errqname">err:XD0017</code></dt><dd><p>It is a dynamic
             error if the running pipeline attempts to invoke a step which the processor
-          does not know how to perform.</p><p>See: <a href="#err.inline.D0017">Extension Steps</a></p></dd><dt><a name="err.D0019"></a><code class="errqname">err:XD0019</code></dt><dd><p>It is a dynamic error if any option value
+          does not know how to perform.</p><p>See: <a href="#err.inline.D0017">Extension Steps</a></p></dd><dt><a name="err.D0018"></a><code class="errqname">err:XD0018</code></dt><dd><p>It is a
+dynamic error if the parameter list contains
+any elements other than c:param.</p><p>See: <a href="#err.inline.D0018">The c:param-set element</a></p></dd><dt><a name="err.D0019"></a><code class="errqname">err:XD0019</code></dt><dd><p>It is a dynamic error if any option value
               does not satisfy the type required for that option.</p><p>See: <a href="#err.inline.D0019">Common errors</a></p></dd><dt><a name="err.D0020"></a><code class="errqname">err:XD0020</code></dt><dd><p>It is a dynamic
             error if the combination of serialization options specified or defaulted is
           not allowed.</p><p>See: <a href="#err.inline.D0020">p:serialization</a></p></dd><dt><a name="err.D0021"></a><code class="errqname">err:XD0021</code></dt><dd><p>It is a dynamic error for a pipeline to
           attempt to access a resource for which it has insufficient privileges or perform a step
           which is forbidden.</p><p>See: <a href="#err.inline.D0021">Security Considerations</a></p></dd><dt><a name="err.D0022"></a><code class="errqname">err:XD0022</code></dt><dd><p>It is a dynamic error if a processor that
               does not support PSVI annotations attempts to invoke a step which asserts that they
-              are required.</p><p>See: <a href="#err.inline.D0022">PSVIs in XProc</a></p></dd><dt><a name="err.D0026"></a><code class="errqname">err:XD0026</code></dt><dd><p>It is a dynamic error if
+              are required.</p><p>See: <a href="#err.inline.D0022">PSVIs in XProc</a></p></dd><dt><a name="err.D0025"></a><code class="errqname">err:XD0025</code></dt><dd><p>It is a dynamic
+error if the namespace
+attribute is specified, the name contains
+a colon, and the specified namespace is not the same as the in-scope
+namespace binding for the specified prefix.</p><p>See: <a href="#err.inline.D0025">The c:param element</a></p></dd><dt><a name="err.D0026"></a><code class="errqname">err:XD0026</code></dt><dd><p>It is a dynamic error if
 the select expression makes reference to
 the context node, size, or position when the context item is
 undefined.</p><p>See: <a href="#err.inline.D0026">p:variable</a>, <a href="#err.inline.D0026.1">p:option</a>, <a href="#err.inline.D0026.2">p:with-option</a></p></dd><dt><a name="err.D0028"></a><code class="errqname">err:XD0028</code></dt><dd><p>It is a dynamic error if any attribute
