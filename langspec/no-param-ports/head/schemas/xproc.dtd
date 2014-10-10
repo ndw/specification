@@ -637,6 +637,7 @@
  fixup-xml-lang %boolean; #IMPLIED>
 <!ELEMENT %xslt; %step-model;>
 <!ATTLIST %xslt; %step-attrs;
+ parameters CDATA #IMPLIED
  initial-mode %QName; #IMPLIED
  template-name %QName; #IMPLIED
  output-base-uri %URIref; #IMPLIED
@@ -671,6 +672,7 @@
  version CDATA #IMPLIED>
 <!ELEMENT %hash; %step-model;>
 <!ATTLIST %hash; %step-attrs;
+ parameters CDATA #IMPLIED
  value CDATA #IMPLIED
  algorithm %QName; #IMPLIED
  match %XSLT_match_pattern; #IMPLIED
@@ -686,6 +688,7 @@
  assert-valid %boolean; #IMPLIED>
 <!ELEMENT %validate-with-schematron; %step-model;>
 <!ATTLIST %validate-with-schematron; %step-attrs;
+ parameters CDATA #IMPLIED
  phase CDATA #IMPLIED
  assert-valid %boolean; #IMPLIED>
 <!ELEMENT %validate-with-xml-schema; %step-model;>
@@ -699,10 +702,13 @@
  value CDATA #IMPLIED>
 <!ELEMENT %www-form-urlencode; %step-model;>
 <!ATTLIST %www-form-urlencode; %step-attrs;
+ parameters CDATA #IMPLIED
  match %XSLT_match_pattern; #IMPLIED>
 <!ELEMENT %xquery; %step-model;>
-<!ATTLIST %xquery; %step-attrs;>
+<!ATTLIST %xquery; %step-attrs;
+ parameters CDATA #IMPLIED>
 <!ELEMENT %xsl-formatter; %step-model;>
 <!ATTLIST %xsl-formatter; %step-attrs;
+ parameters CDATA #IMPLIED
  href %URIref; #IMPLIED
  content-type CDATA #IMPLIED>
