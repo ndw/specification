@@ -116,6 +116,9 @@ For updated information, please refer to the latest version of the
    <error code="XD0030">It is a dynamic error if a step is unable or incapable of performing its function.</error>
    <error code="XD0033">It is a dynamic error if the name specified is not the name of an in-scope option or variable.</error>
    <error code="XD0034">It is a dynamic error to specify a new namespace or prefix if the lexical value of the specified name contains a colon (or if no wrapper is explicitly specified).</error>
+   <error code="XD1000">It is a dynamic error if the element (or document element) passed to p:make-map is not a c:param-set element.</error>
+   <error code="XD1001">It is a dynamic error if the computed value does not match the specified sequence type.</error>
+   <error code="XD1002">It is a dynamic error if any of the c:param elements are invalid.</error>
    <error code="XS0001">It is a static error if there are any loops in the connections between steps: no step can be connected to itself nor can there be any sequence of connections through other steps that leads back to itself.</error>
    <error code="XS0002">All steps in the same scope must have unique names: it is a static error if two steps with the same name appear in the same scope.</error>
    <error code="XS0003">It is a static error if any declared input is not connected.</error>

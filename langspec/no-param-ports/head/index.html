@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: An XML Pipeline Language</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.5" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="base.css" /><link rel="alternate" title="XML" href="langspec.xml" /><link rel="alternate" title="ChangeLog" href="changelog.html" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="https://docbook.github.com/release/2.0.5/base/css/prism.css" rel="stylesheet" /><link href="https://docbook.github.com/release/2.0.5/base/css/db-prism.css" rel="stylesheet" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1><div class="title">XProc 2.0: An XML Pipeline Language</div></h1><h2>W3C Editor's Draft  10 October 2014 at 15:27 UTC (<a href="https://github.com/ndw//specification/commit/516720e86c7801d47a49071291422e28ac7e6a91">build 75</a>)</h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc/">http://www.w3.org/TR/xproc/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="langspec.xml">XML</a>, <a href="changelog.html">ChangeLog</a>, 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: An XML Pipeline Language</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.5" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="base.css" /><link rel="alternate" title="XML" href="langspec.xml" /><link rel="alternate" title="ChangeLog" href="changelog.html" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="https://docbook.github.com/release/2.0.5/base/css/prism.css" rel="stylesheet" /><link href="https://docbook.github.com/release/2.0.5/base/css/db-prism.css" rel="stylesheet" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1><div class="title">XProc 2.0: An XML Pipeline Language</div></h1><h2>W3C Editor's Draft  15 October 2014 at 13:47 UTC (<a href="https://github.com/ndw//specification/commit/5428f3780830a21d8683a7a80d25d46db880e3b4">build 78</a>)</h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc/">http://www.w3.org/TR/xproc/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="langspec.xml">XML</a>, <a href="changelog.html">ChangeLog</a>, 
 	  automatic <a href="diff.html">change markup</a> from the previous draft
           courtesy of <a href="http://www.deltaxml.com/">DeltaXML</a>.
         </p><p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
@@ -1185,17 +1185,35 @@ specified.</p>
 <section id="f.make-map" class="section"><div class="section-titlepage"><h4>2.7.8 Make Map</h4></div>
 
 
-<p>XProc uses maps to represent pass parameters to steps. Sometimes
+<p>XProc uses maps to pass parameters to steps. Sometimes
 it is convenient to represent these maps as XML documents. This function
 reads such an XML document and produces a map.</p>
 
 <div class="funcsynopsis"><span class="funcname">p:make-map</span><span class="funcparen">(</span><span class="paramname">$param-set</span><span class="typeas"> as </span><span class="type">item()</span><span class="funcparen">)</span><span class="typeas"> as </span><span class="type">map(xs:QName,item())</span></div>
 
-<p>The <em class="parameter"><code>param-set</code></em> parameter
-<span class="rfc2119" id="f.make-map.4.2">should</span> be a <a href="#cv.param-set"><code class="tag-element">c:param-set</code></a> element or
-document. Markup errors in the <em class="parameter"><code>param-set</code></em> or its
-decendants are ignored.</p>
+<p>The map returned contains (exclusively) the parameters that are
+represented by the <em class="parameter"><code>$param-set</code></em> item.</p>
 
+<p>The <em class="parameter"><code>$param-set</code></em> provided
+<span class="rfc2119" id="f.make-map.5.2">must</span> be a <a href="#cv.param-set"><code class="tag-element">c:param-set</code></a> element or a
+document. If it is a document, <a href="#cv.param-set"><code class="tag-element">c:param-set</code></a>
+<span class="rfc2119" id="f.make-map.5.5">must</span> be the document element.
+<a name="err.inline.D1000"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D1000"><code class="errqname">err:XD1000</code></a>)
+if the element (or document element) passed to
+<a href="#f.make-map"><code class="function">p:make-map</code></a> is not a <a href="#cv.param-set"><code class="tag-element">c:param-set</code></a>
+element.</p>
+
+<p>Only <a href="#cv.param"><code class="tag-element">c:param</code></a> children of the <a href="#cv.param-set"><code class="tag-element">c:param-set</code></a>
+element are considered, all other nodes are ignored. The parameters
+represented by those <a href="#cv.param"><code class="tag-element">c:param</code></a> children
+are added to the map that is returned.
+<a name="err.inline.D1002"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D1002"><code class="errqname">err:XD1002</code></a>)
+if any of the <a href="#cv.param"><code class="tag-element">c:param</code></a> elements are invalid.
+</p>
+
+<div class="note admonition"><h3>Note</h3>
+<p>Must tie down what “valid” means wrt the c:param element.</p>
+</div>
 </section>
 
       <section id="other-xpath-extension-functions" class="section"><div class="section-titlepage"><h4>2.7.9 Other XPath Extension Functions</h4></div>
@@ -2953,9 +2971,10 @@ elements.</p>
 <p>The type of the value may be specified in the <code class="tag-attribute">as</code> attribute using an XPath Sequence
 Type<sup>[citation needed]</sup>. If an atomic type,
 or sequence of atomic types, is specified, the value provided for the
-option will be atomized according to the standard XPath rules. It is
-an error, err:FIXME, if the computed value does not match the
-specified sequence type.</p>
+option will be atomized according to the standard XPath rules.
+<a name="err.inline.D1001"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D1001"><code class="errqname">err:XD1001</code></a>) if
+the computed value does not match the specified sequence
+type.</p>
 
 <p>Since all <em class="glossterm"><a href="#dt-in-scope-bindings">in-scope bindings</a></em> are present
 in the Processor XPath Context as variable bindings, <code class="tag-attribute">select</code> expressions may refer to the value of
@@ -3017,9 +3036,10 @@ name.</p>
 <code class="tag-attribute">as</code> attribute using an XPath Sequence
 Type<sup>[citation needed]</sup>. If an atomic type,
 or sequence of atomic types, is specified, the value provided for the
-option will be atomized according to the standard XPath rules. It is
-an error, err:FIXME, if the computed value does not match the
-specified sequence type</p>
+option will be atomized according to the standard XPath rules.
+<a name="err.inline.D1001.1"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D1001"><code class="errqname">err:XD1001</code></a>) if
+the computed value does not match the specified sequence
+type.</p>
 
 <p>An option may be declared as <code class="tag-attribute">required</code>. <a name="err.inline.S0018"></a>If an option is
 required, it is a <em class="glossterm"><a href="#dt-static-error">static error</a></em> (<a href="#err.S0018"><code class="errqname">err:XS0018</code></a>) to invoke the
@@ -3100,9 +3120,10 @@ the value of the variable.</p>
 <p>The type of the value may be specified in the <code class="tag-attribute">as</code> attribute using an XPath Sequence
 Type<sup>[citation needed]</sup>. If an atomic type,
 or sequence of atomic types, is specified, the value provided for the
-option will be atomized according to the standard XPath rules. It is
-an error, err:FIXME, if the computed value does not match the
-specified sequence type</p>
+option will be atomized according to the standard XPath rules.
+<a name="err.inline.D1001.2"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D1001"><code class="errqname">err:XD1001</code></a>) if
+the computed value does not match the specified sequence
+type.</p>
 
 <p>All <em class="glossterm"><a href="#dt-in-scope-bindings">in-scope bindings</a></em> for the step
 instance itself are present in the Processor XPath Context as variable
@@ -7404,7 +7425,13 @@ dynamic error if the name specified is not the
 name of an in-scope option or variable.</p><p>See: <a href="#err.inline.D0033">Value Available</a></p></dd><dt><a name="err.D0034"></a><code class="errqname">err:XD0034</code></dt><dd><p>It is a dynamic error
 to specify a new namespace or prefix if the lexical value of the specified
 name contains a colon (or if no wrapper is
-explicitly specified).</p><p>See: <a href="#err.inline.D0034">p:data</a>, <a href="#err.inline.D0034.1">p:add-attribute</a>, <a href="#err.inline.D0034.2">p:error</a>, <a href="#err.inline.D0034.3">p:label-elements</a>, <a href="#err.inline.D0034.4">p:pack</a>, <a href="#err.inline.D0034.5">p:rename</a>, <a href="#err.inline.D0034.6">p:wrap</a>, <a href="#err.inline.D0034.7">p:wrap-sequence</a></p></dd></dl></div>
+explicitly specified).</p><p>See: <a href="#err.inline.D0034">p:data</a>, <a href="#err.inline.D0034.1">p:add-attribute</a>, <a href="#err.inline.D0034.2">p:error</a>, <a href="#err.inline.D0034.3">p:label-elements</a>, <a href="#err.inline.D0034.4">p:pack</a>, <a href="#err.inline.D0034.5">p:rename</a>, <a href="#err.inline.D0034.6">p:wrap</a>, <a href="#err.inline.D0034.7">p:wrap-sequence</a></p></dd><dt><a name="err.D1000"></a><code class="errqname">err:XD1000</code></dt><dd><p>It is a dynamic error
+if the element (or document element) passed to
+p:make-map is not a c:param-set
+element.</p><p>See: <a href="#err.inline.D1000">Make Map</a></p></dd><dt><a name="err.D1001"></a><code class="errqname">err:XD1001</code></dt><dd><p>It is a dynamic error if
+the computed value does not match the specified sequence
+type.</p><p>See: <a href="#err.inline.D1001">p:variable</a>, <a href="#err.inline.D1001.1">p:option</a>, <a href="#err.inline.D1001.2">p:with-option</a></p></dd><dt><a name="err.D1002"></a><code class="errqname">err:XD1002</code></dt><dd><p>It is a dynamic error
+if any of the c:param elements are invalid.</p><p>See: <a href="#err.inline.D1002">Make Map</a></p></dd></dl></div>
 </section>
 
 <section id="app.step-errors" class="section"><div class="section-titlepage"><h2>3 Step Errors</h2></div>

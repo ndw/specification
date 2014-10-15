@@ -101,7 +101,7 @@ and pipeline authors may amend this namespace.
    </listitem>
    <listitem>
       <simpara>
-         <link xlink:href="http://www.w3.org/TR/2010/REC-xproc-20100511/#c.parameters">c:param</link>
+         <link xlink:href="http://www.w3.org/TR/2010/REC-xproc-20100511/#f.make-map">c:param</link>
       </simpara>
    </listitem>
    <listitem>
