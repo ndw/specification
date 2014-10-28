@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: An XML Pipeline Language</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.5" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="base.css" /><link rel="alternate" title="XML" href="langspec.xml" /><link rel="alternate" title="ChangeLog" href="changelog.html" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="https://docbook.github.com/release/2.0.5/base/css/prism.css" rel="stylesheet" /><link href="https://docbook.github.com/release/2.0.5/base/css/db-prism.css" rel="stylesheet" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1><div class="title">XProc 2.0: An XML Pipeline Language</div></h1><h2>W3C Editor's Draft  <time datetime="2014-10-28T12:50:12Z">28 October 2014 at 12:50 UTC (<a href="https://github.com/ndw//specification/commit/36c07ab4e960d6625904d832e8e580c2aff2690c">build 84</a>)</time></h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc/">http://www.w3.org/TR/xproc/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="langspec.xml">XML</a>, <a href="changelog.html">ChangeLog</a>, 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: An XML Pipeline Language</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.5" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="base.css" /><link rel="alternate" title="XML" href="langspec.xml" /><link rel="alternate" title="ChangeLog" href="changelog.html" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="https://docbook.github.com/release/2.0.5/base/css/prism.css" rel="stylesheet" /><link href="https://docbook.github.com/release/2.0.5/base/css/db-prism.css" rel="stylesheet" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1><div class="title">XProc 2.0: An XML Pipeline Language</div></h1><h2>W3C Editor's Draft  <time datetime="2014-10-28T13:23:40Z">28 October 2014 at 13:23 UTC (<a href="https://github.com/ndw//specification/commit/9577e522d31f7c3e62ec71ee86e9844899de64e8">build 85</a>)</time></h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc/">http://www.w3.org/TR/xproc/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="langspec.xml">XML</a>, <a href="changelog.html">ChangeLog</a>, 
 	  automatic <a href="diff.html">change markup</a> from the previous draft
           courtesy of <a href="http://www.deltaxml.com/">DeltaXML</a>.
         </p><p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
@@ -3747,11 +3747,22 @@ description of these steps may be found in
 <a href="http://www.w3.org/2008/xproc-1.0.xpl">xproc-1.0.xpl</a>.
 </p>
 
+<p>Some aspects of documents are generally unchanged by steps:</p>
+
+<div class="itemizedlist">
+
+
+<ul><li>
 <p>When a step in this library produces an output document,
 the base URI of the output is the base URI of the step's primary
 input document unless the step's process explicitly sets an
 <code class="tag-attribute">xml:base</code> attribute or the step's
 description explicitly states how the base URI is constructed.</p>
+</li><li>
+<p>Unless otherwise specified, steps in this library do not
+modify the <em class="glossterm"><a href="#dt-document-properties">document properties</a></em> of the documents
+that flow through them.</p>
+</li></ul></div>
 
 <p id="cv.result">Also, in this section, several steps use this
 element for result information:</p>
@@ -3762,7 +3773,7 @@ element for result information:</p>
 context is as defined in <a href="#xpath-context" title="XPaths in XProc">Section 2.7, “XPaths in XProc”</a>.</p>
 
 <p>When a step specifies a particular version of a technology,
-implementations <span class="rfc2119" id="std-components.7.1">must</span> implement that
+implementations <span class="rfc2119" id="std-components.8.1">must</span> implement that
 version or a subsequent version that is backwards compatible with that
 version. At user-option, they may implement other non-backwards
 compatible versions.</p>
