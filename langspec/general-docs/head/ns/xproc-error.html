@@ -69,6 +69,12 @@ For updated information, please refer to the latest version of the
    <dt><code>err:XC0064</code></dt><dd><p>It is a dynamic error if the exit code from the command is greater than the specified failure-threshold value.</p></dd>
    <dt><code>err:XC0066</code></dt><dd><p>It is a dynamic error if the arg-separator option is specified and is not exactly one character long.</p></dd>
    <dt><code>err:XC1001</code></dt><dd><p>It is a dynamic error if the properties map contains a key equal to the string “media-type”.</p></dd>
+   <dt><code>err:XC1002</code></dt><dd><p>It is a dynamic error if the supplied media-type is not a valid media type of the form “type/subtype+ext”.</p></dd>
+   <dt><code>err:XC1003</code></dt><dd><p>It is a dynamic error if the p:cast-media-type step cannot perform the requested cast.</p></dd>
+   <dt><code>err:XC1004</code></dt><dd><p>It is a dynamic error if the c:data contains content is not a valid base64 string.</p></dd>
+   <dt><code>err:XC1005</code></dt><dd><p>It is a dynamic error if the c:data element does not have a content-type attribute.</p></dd>
+   <dt><code>err:XC1006</code></dt><dd><p>It is a dynamic error if the media-type is supplied and is not the same as the content-type specified on the c:data element.</p></dd>
+   <dt><code>err:XC1007</code></dt><dd><p>In all cases except when the input document is a c:data element, it is a dynamic error if the media-type is not supplied.</p></dd>
    <dt><code>err:XD0003</code></dt><dd><p>It is a dynamic error if the viewport source does not provide exactly one document.</p></dd>
    <dt><code>err:XD0004</code></dt><dd><p>It is a dynamic error if no subpipeline is selected by the p:choose and no default is provided.</p></dd>
    <dt><code>err:XD0005</code></dt><dd><p>It is a dynamic error if more than one document appears on the connection for the xpath-context.</p></dd>

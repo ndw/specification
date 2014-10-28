@@ -51,6 +51,11 @@ and pipeline authors may amend this namespace.
    </listitem>
    <listitem>
       <simpara>
+         <link xlink:href="http://www.w3.org/TR/2010/REC-xproc-20100511/#c.cast-media-type">c:data</link>
+      </simpara>
+   </listitem>
+   <listitem>
+      <simpara>
          <link xlink:href="http://www.w3.org/TR/2010/REC-xproc-20100511/#c.directory-list">c:directory</link>
       </simpara>
    </listitem>

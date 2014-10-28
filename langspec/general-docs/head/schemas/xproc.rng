@@ -148,6 +148,7 @@
       <ref name="VocabHttpResponse"/>
       <ref name="VocabQuery"/>
       <ref name="VocabLine"/>
+      <ref name="VocabData"/>
       <ref name="VocabDirectory"/>
       <ref name="Errors"/>
       <ref name="StandardStep"/>
@@ -1354,6 +1355,20 @@
   </define>
   <define name="VocabLine" sa:class="step-vocabulary">
     <element name="c:line">
+      <text/>
+    </element>
+  </define>
+  <define name="VocabData" sa:class="step-vocabulary">
+    <element name="c:data">
+      <optional>
+        <attribute name="content-type"/>
+      </optional>
+      <optional>
+        <attribute name="charset"/>
+      </optional>
+      <optional>
+        <attribute name="encoding"/>
+      </optional>
       <text/>
     </element>
   </define>

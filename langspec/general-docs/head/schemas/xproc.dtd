@@ -68,6 +68,7 @@
 
 <!ENTITY % add-attribute "%p;add-attribute">
 <!ENTITY % add-xml-base "%p;add-xml-base">
+<!ENTITY % cast-media-type "%p;cast-media-type">
 <!ENTITY % compare "%p;compare">
 <!ENTITY % count "%p;count">
 <!ENTITY % delete "%p;delete">
@@ -109,17 +110,17 @@
 <!ENTITY % xquery "%p;xquery">
 <!ENTITY % xsl-formatter "%p;xsl-formatter">
 
-<!ENTITY % step "(%add-attribute;|%add-xml-base;|%compare;|
-                  %count;|%delete;|%directory-list;|%error;|
-                  %escape-markup;|%filter;|%http-request;|%identity;|
-                  %insert;|%label-elements;|%load;|%make-absolute-uris;|
-                  %namespace-rename;|%pack;|%parameters;|%rename;|
-                  %replace;|%set-attributes;|%set-properties;|%sink;|
-                  %split-sequence;|%store;|%string-replace;|%unescape-markup;|
-                  %unwrap;|%wrap;|%wrap-sequence;|%xinclude;|
-                  %xslt;|%exec;|%hash;|%uuid;|
-                  %validate-with-relax-ng;|%validate-with-schematron;|%validate-with-xml-schema;|%www-form-urldecode;|
-                  %www-form-urlencode;|%xquery;|%xsl-formatter; %user-steps;)">
+<!ENTITY % step "(%add-attribute;|%add-xml-base;|%cast-media-type;|
+                  %compare;|%count;|%delete;|%directory-list;|
+                  %error;|%escape-markup;|%filter;|%http-request;|
+                  %identity;|%insert;|%label-elements;|%load;|
+                  %make-absolute-uris;|%namespace-rename;|%pack;|%parameters;|
+                  %rename;|%replace;|%set-attributes;|%set-properties;|
+                  %sink;|%split-sequence;|%store;|%string-replace;|
+                  %unescape-markup;|%unwrap;|%wrap;|%wrap-sequence;|
+                  %xinclude;|%xslt;|%exec;|%hash;|
+                  %uuid;|%validate-with-relax-ng;|%validate-with-schematron;|%validate-with-xml-schema;|
+                  %www-form-urldecode;|%www-form-urlencode;|%xquery;|%xsl-formatter; %user-steps;)">
 <!ENTITY % annotation "%documentation;|%pipeinfo;">
 <!ENTITY % component
  "(%for-each;|%viewport;|%choose;|%group;|%try;|%step;)">
@@ -482,6 +483,9 @@
 <!ATTLIST %add-xml-base; %step-attrs;
  all %boolean; #IMPLIED
  relative %boolean; #IMPLIED>
+<!ELEMENT %cast-media-type; %step-model;>
+<!ATTLIST %cast-media-type; %step-attrs;
+ media-type CDATA #IMPLIED>
 <!ELEMENT %compare; %step-model;>
 <!ATTLIST %compare; %step-attrs;
  fail-if-not-equal %boolean; #IMPLIED>
