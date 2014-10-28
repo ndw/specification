@@ -88,13 +88,13 @@ For updated information, please refer to the latest version of the
    <error code="XC0063">It is a dynamic error if the path-separator option is specified and is not exactly one character long.</error>
    <error code="XC0064">It is a dynamic error if the exit code from the command is greater than the specified failure-threshold value.</error>
    <error code="XC0066">It is a dynamic error if the arg-separator option is specified and is not exactly one character long.</error>
-   <error code="XC1001">It is a dynamic error if the properties map contains a key equal to the string “media-type”.</error>
-   <error code="XC1002">It is a dynamic error if the supplied media-type is not a valid media type of the form “type/subtype+ext”.</error>
-   <error code="XC1003">It is a dynamic error if the p:cast-media-type step cannot perform the requested cast.</error>
+   <error code="XC1001">It is a dynamic error if the properties map contains a key equal to the string “content-type”.</error>
+   <error code="XC1002">It is a dynamic error if the supplied content-type is not a valid media type of the form “type/subtype+ext”.</error>
+   <error code="XC1003">It is a dynamic error if the p:cast-content-type step cannot perform the requested cast.</error>
    <error code="XC1004">It is a dynamic error if the c:data contains content is not a valid base64 string.</error>
    <error code="XC1005">It is a dynamic error if the c:data element does not have a content-type attribute.</error>
-   <error code="XC1006">It is a dynamic error if the media-type is supplied and is not the same as the content-type specified on the c:data element.</error>
-   <error code="XC1007">In all cases except when the input document is a c:data element, it is a dynamic error if the media-type is not supplied.</error>
+   <error code="XC1006">It is a dynamic error if the content-type is supplied and is not the same as the content-type specified on the c:data element.</error>
+   <error code="XC1007">In all cases except when the input document is a c:data element, it is a dynamic error if the content-type is not supplied.</error>
    <error code="XD0003">It is a dynamic error if the viewport source does not provide exactly one document.</error>
    <error code="XD0004">It is a dynamic error if no subpipeline is selected by the p:choose and no default is provided.</error>
    <error code="XD0005">It is a dynamic error if more than one document appears on the connection for the xpath-context.</error>
@@ -103,7 +103,7 @@ For updated information, please refer to the latest version of the
    <error code="XD0008">It is a dynamic error if a document sequence appears where a document to be used as the context node is expected.</error>
    <error code="XD0009">It is a dynamic error if the element attribute on p:namespaces is specified and it does not identify a single element node.</error>
    <error code="XD0010">It is a dynamic error if the match expression on p:viewport does not match an element or document.</error>
-   <error code="XD0011">It is a dynamic error if the resource referenced by a p:document element does not exist, cannot be accessed, or has an XML media type and is not a well-formed XML document.</error>
+   <error code="XD0011">It is a dynamic error if the resource referenced by a p:document element does not exist, cannot be accessed, or has an XML content type and is not a well-formed XML document.</error>
    <error code="XD0012">It is a dynamic error if any attempt is made to dereference a URI where the scheme of the URI reference is not supported.</error>
    <error code="XD0013">It is a dynamic error if the specified namespace bindings are inconsistent; that is, if the same prefix is bound to two different namespace names.</error>
    <error code="XD0014">It is a dynamic error for any unqualified attribute names other than “name”, “namespace”, or “value” to appear on a c:param element.</error>
@@ -124,7 +124,7 @@ For updated information, please refer to the latest version of the
    <error code="XD1000">It is a dynamic error if the element (or document element) passed to p:make-map is not a c:param-set element.</error>
    <error code="XD1001">It is a dynamic error if the computed value does not match the specified sequence type.</error>
    <error code="XD1002">It is a dynamic error if any of the c:param elements are invalid.</error>
-   <error code="XD1003">If an input port provides a set of acceptable media types, it is a dynamic error if an input document that arrives on the port has a media type not in that set.</error>
+   <error code="XD1003">If an input port provides a set of acceptable content types, it is a dynamic error if an input document that arrives on the port has a content type not in that set.</error>
    <error code="XS0001">It is a static error if there are any loops in the connections between steps: no step can be connected to itself nor can there be any sequence of connections through other steps that leads back to itself.</error>
    <error code="XS0002">All steps in the same scope must have unique names: it is a static error if two steps with the same name appear in the same scope.</error>
    <error code="XS0003">It is a static error if any declared input is not connected.</error>

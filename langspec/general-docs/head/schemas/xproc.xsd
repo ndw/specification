@@ -765,12 +765,12 @@
          </complexContent>
       </complexType>
    </element>
-   <element name="cast-media-type" substitutionGroup="p:atomicStep">
+   <element name="cast-content-type" substitutionGroup="p:atomicStep">
       <complexType>
          <complexContent>
             <restriction base="p:atomicStepType">
                <group ref="p:atomicStepModel"/>
-               <attribute name="media-type" type="string"/>
+               <attribute name="content-type" type="string"/>
                <anyAttribute namespace="##other" processContents="lax"/>
             </restriction>
          </complexContent>

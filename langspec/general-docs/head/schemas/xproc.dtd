@@ -68,7 +68,7 @@
 
 <!ENTITY % add-attribute "%p;add-attribute">
 <!ENTITY % add-xml-base "%p;add-xml-base">
-<!ENTITY % cast-media-type "%p;cast-media-type">
+<!ENTITY % cast-content-type "%p;cast-content-type">
 <!ENTITY % compare "%p;compare">
 <!ENTITY % count "%p;count">
 <!ENTITY % delete "%p;delete">
@@ -110,7 +110,7 @@
 <!ENTITY % xquery "%p;xquery">
 <!ENTITY % xsl-formatter "%p;xsl-formatter">
 
-<!ENTITY % step "(%add-attribute;|%add-xml-base;|%cast-media-type;|
+<!ENTITY % step "(%add-attribute;|%add-xml-base;|%cast-content-type;|
                   %compare;|%count;|%delete;|%directory-list;|
                   %error;|%escape-markup;|%filter;|%http-request;|
                   %identity;|%insert;|%label-elements;|%load;|
@@ -483,9 +483,9 @@
 <!ATTLIST %add-xml-base; %step-attrs;
  all %boolean; #IMPLIED
  relative %boolean; #IMPLIED>
-<!ELEMENT %cast-media-type; %step-model;>
-<!ATTLIST %cast-media-type; %step-attrs;
- media-type CDATA #IMPLIED>
+<!ELEMENT %cast-content-type; %step-model;>
+<!ATTLIST %cast-content-type; %step-attrs;
+ content-type CDATA #IMPLIED>
 <!ELEMENT %compare; %step-model;>
 <!ATTLIST %compare; %step-attrs;
  fail-if-not-equal %boolean; #IMPLIED>
