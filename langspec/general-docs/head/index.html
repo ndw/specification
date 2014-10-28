@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: An XML Pipeline Language</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.5" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="base.css" /><link rel="alternate" title="XML" href="langspec.xml" /><link rel="alternate" title="ChangeLog" href="changelog.html" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="https://docbook.github.com/release/2.0.5/base/css/prism.css" rel="stylesheet" /><link href="https://docbook.github.com/release/2.0.5/base/css/db-prism.css" rel="stylesheet" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1><div class="title">XProc 2.0: An XML Pipeline Language</div></h1><h2>W3C Editor's Draft  <time datetime="2014-10-28T18:38:42Z">28 October 2014 at 18:38 UTC (<a href="https://github.com/ndw//specification/commit/a1b51d9f2457a79177962f9ad82acf88fd861127">build 89</a>)</time></h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc/">http://www.w3.org/TR/xproc/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="langspec.xml">XML</a>, <a href="changelog.html">ChangeLog</a>, 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: An XML Pipeline Language</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.5" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="base.css" /><link rel="alternate" title="XML" href="langspec.xml" /><link rel="alternate" title="ChangeLog" href="changelog.html" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="https://docbook.github.com/release/2.0.5/base/css/prism.css" rel="stylesheet" /><link href="https://docbook.github.com/release/2.0.5/base/css/db-prism.css" rel="stylesheet" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1><div class="title">XProc 2.0: An XML Pipeline Language</div></h1><h2>W3C Editor's Draft  <time datetime="2014-10-28T19:36:00Z">28 October 2014 at 19:36 UTC (<a href="https://github.com/ndw//specification/commit/2fc17a94703ad3045c3fa3343e3289950db506bf">build 91</a>)</time></h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc/">http://www.w3.org/TR/xproc/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="langspec.xml">XML</a>, <a href="changelog.html">ChangeLog</a>, 
 	  automatic <a href="diff.html">change markup</a> from the previous draft
           courtesy of <a href="http://www.deltaxml.com/">DeltaXML</a>.
         </p><p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
@@ -3945,37 +3945,37 @@ a valid media type of the form
 “<code class="literal">content-type</code>” <em class="glossterm"><a href="#dt-document-properties">document
 property</a></em>.
 </p>
-</li><li>
+</li><li id="c.data">
 <p>Casting from a non-XML media type to an XML media type produces an
-XML document with a <code class="tag-element">c:data</code> document element. The original
+XML document with a <a href="#c.data"><code class="tag-element">c:data</code></a> document element. The original
 media type will be preserved in the
 <code class="tag-attribute">content-type</code> attribute on the
-<code class="tag-element">c:data</code> element.</p>
+<a href="#c.data"><code class="tag-element">c:data</code></a> element.</p>
 
 <p id="R.1" prefix="c" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:data<br />  content-type? = <var>string</var><br />  charset? = <var>string</var><br />  encoding? = <var>string</var>&gt;<br />    <var>string</var><br />&lt;/c:data&gt;</code></p>
 
-<p>The content of the <code class="tag-element">c:data</code> element is the base64 encoded
+<p>The content of the <a href="#c.data"><code class="tag-element">c:data</code></a> element is the base64 encoded
 representation of the non-XML content.</p>
 </li><li>
 <p>Casting from an XML media type to a non-XML media type
 <span class="rfc2119" id="c.cast-content-type.5.3.1.1">must</span> support the case where the input document is
-a <code class="tag-element">c:data</code> document. The resulting document will
+a <a href="#c.data"><code class="tag-element">c:data</code></a> document. The resulting document will
 have the specified media type and a <em class="glossterm"><a href="#dt-representation">representation</a></em> that
-is the content of the <code class="tag-element">c:data</code> element after decoding the base64
+is the content of the <a href="#c.data"><code class="tag-element">c:data</code></a> element after decoding the base64
 encoded content.</p>
 <p><a name="err.inline.C1004"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
-error</a></em> (<a href="#err.C1004"><code class="errqname">err:XC1004</code></a>) if the <code class="tag-element">c:data</code> contains content is not
+error</a></em> (<a href="#err.C1004"><code class="errqname">err:XC1004</code></a>) if the <a href="#c.data"><code class="tag-element">c:data</code></a> contains content is not
 a valid base64 string.</p>
 <p><a name="err.inline.C1005"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
-error</a></em> (<a href="#err.C1005"><code class="errqname">err:XC1005</code></a>) if the <code class="tag-element">c:data</code> element does not have
+error</a></em> (<a href="#err.C1005"><code class="errqname">err:XC1005</code></a>) if the <a href="#c.data"><code class="tag-element">c:data</code></a> element does not have
 a <code class="tag-attribute">content-type</code> attribute.</p>
 <p><a name="err.inline.C1006"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
 error</a></em> (<a href="#err.C1006"><code class="errqname">err:XC1006</code></a>) if the <code class="option">content-type</code> is supplied and is
 not the same as the <code class="tag-attribute">content-type</code> specified on
-the <code class="tag-element">c:data</code> element.
+the <a href="#c.data"><code class="tag-element">c:data</code></a> element.
 </p>
 <p><a name="impl-41"></a>Casting from an XML media type to a non-XML media type when
-the input document is not a <code class="tag-element">c:data</code> document is
+the input document is not a <a href="#c.data"><code class="tag-element">c:data</code></a> document is
 <em class="glossterm"><a href="#dt-implementation-defined">implementation-defined</a></em>.</p>
 </li><li>
 <p><a name="impl-42"></a>What happens when one non-XML media type is cast to another
@@ -3986,7 +3986,7 @@ cannot perform the requested cast.</p>
 </li></ul></div>
 
 <p><a name="err.inline.C1007"></a>In all cases except when the input document
-is a <code class="tag-element">c:data</code> element, it is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
+is a <a href="#c.data"><code class="tag-element">c:data</code></a> element, it is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
 error</a></em> (<a href="#err.C1007"><code class="errqname">err:XC1007</code></a>) if the <code class="option">content-type</code> is not supplied.
 </p>
 </section>
