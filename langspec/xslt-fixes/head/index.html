@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: An XML Pipeline Language</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.5" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="base.css" /><link rel="alternate" title="XML" href="langspec.xml" /><link rel="alternate" title="ChangeLog" href="changelog.html" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="https://docbook.github.com/release/2.0.5/base/css/prism.css" rel="stylesheet" /><link href="https://docbook.github.com/release/2.0.5/base/css/db-prism.css" rel="stylesheet" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1><div class="title">XProc 2.0: An XML Pipeline Language</div></h1><h2>W3C Editor's Draft  <time datetime="2014-10-29T17:58:36Z">29 October 2014 at 17:58 UTC (<a href="https://github.com/ndw//specification/commit/b3d78b06959a3425f52afbbc149a8dc1524f270d">build 98</a>)</time></h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc/">http://www.w3.org/TR/xproc/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="langspec.xml">XML</a>, <a href="changelog.html">ChangeLog</a>, 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: An XML Pipeline Language</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.5" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="base.css" /><link rel="alternate" title="XML" href="langspec.xml" /><link rel="alternate" title="ChangeLog" href="changelog.html" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="https://docbook.github.com/release/2.0.5/base/css/prism.css" rel="stylesheet" /><link href="https://docbook.github.com/release/2.0.5/base/css/db-prism.css" rel="stylesheet" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1><div class="title">XProc 2.0: An XML Pipeline Language</div></h1><h2>W3C Editor's Draft  <time datetime="2014-11-06T13:44:36Z">6 November 2014 at 13:44 UTC (<a href="https://github.com/ndw//specification/commit/8c0d8102396e13fb0fc91ab7196956a0b735535d">build 99</a>)</time></h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc/">http://www.w3.org/TR/xproc/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="langspec.xml">XML</a>, <a href="changelog.html">ChangeLog</a>, 
 	  automatic <a href="diff.html">change markup</a> from the previous draft
           courtesy of <a href="http://www.deltaxml.com/">DeltaXML</a>.
         </p><p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
@@ -5851,16 +5851,16 @@ examining the version of the stylesheet.</p>
 
 <p>The XSLT stylesheet provided on the <code class="port">stylesheet</code> port
 is applied to the document on the <code class="port">source</code> port. Any
-parameters passed in the <code class="option">parameters</code> option are used to
-define top-level stylesheet parameters. The primary result document of
-the transformation appears on the <code class="port">result</code> port. All other
-result documents appear on the <code class="port">secondary</code> port.
-<a name="impl-53"></a>The order in which result documents appear on the
-<code class="port">secondary</code> port is
-<em class="glossterm"><a href="#dt-implementation-dependent">implementation-dependent</a></em>.
-If XSLT
-1.0 is used, an empty sequence of documents <span class="rfc2119" id="c.xslt.8.7">must</span>
-appear on the <code class="port">secondary</code> port.</p>
+parameters passed in the <code class="option">parameters</code> option are used
+to define top-level stylesheet parameters. The primary result document
+of the transformation, if there is one, appears on the
+<code class="port">result</code> port. At most one document can appear on the
+<code class="port">result</code> port. All other result documents appear on the
+<code class="port">secondary</code> port. <a name="impl-53"></a>The order in which result documents
+appear on the <code class="port">secondary</code> port is
+<em class="glossterm"><a href="#dt-implementation-dependent">implementation-dependent</a></em>. If XSLT 1.0 is
+used, an empty sequence of documents <span class="rfc2119" id="c.xslt.8.8">must</span> appear on
+the <code class="port">secondary</code> port.</p>
 
 <p>If a sequence of documents is provided on the
 <code class="port">source</code> port, the first document is used as the
@@ -6956,8 +6956,8 @@ on p:make-absolute-uris is
 not valid, or if it is absent and the input document has no base URI,
 the results are implementation-dependent. See <a href="#c.make-absolute-uris" title="p:make-absolute-uris">Section 7.1.16, “p:make-absolute-uris”</a>.</li><li>The
 order in which c:param elements occur in the c:param-set is
-implementation-dependent. See <a href="#c.parameters" title="p:parameters">Section 7.1.19, “p:parameters”</a>.</li><li>The order in which result documents appear on the
-secondary port is
+implementation-dependent. See <a href="#c.parameters" title="p:parameters">Section 7.1.19, “p:parameters”</a>.</li><li>The order in which result documents
+appear on the secondary port is
 implementation-dependent. See <a href="#c.xslt" title="p:xslt">Section 7.1.33, “p:xslt”</a>.</li><li>How XSLT message termination
 errors are reported to the XProc processor is
 implementation-dependent. See <a href="#c.xslt" title="p:xslt">Section 7.1.33, “p:xslt”</a>.</li><li>The specific exit status values returned by
