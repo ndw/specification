@@ -5,61 +5,37 @@ use English;
 
 # Hack hack hack
 
-print <<EOF1;
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>ndw/specification</title>
-</head>
-<body>
-<h1>Published files from ndw/specification</h1>
+print "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+print "<head>\n";
+print "<title>ndw/specification</title>\n";
+print "</head>\n";
+print "<body>\n";
+print "<h1>Published files from ndw/specification</h1>\n";
+print "\n";
+print "<p>This site hosts Norman Walsh&apos;s “private” drafts of\n";
+print "<cite>XProc 2.0: An XML Pipeline Language</cite> baked fresh\n";
+print "automagically by <a href=\"http://travis-ci.org/\">Travis CI</a> after\n";
+print "every commit.</p>\n";
 
-<p>This site hosts Norman Walsh's “private” drafts of
-<cite>XProc 2.0: An XML Pipeline Language</cite> baked fresh
-automagically by <a href="http://travis-ci.org/">Travis CI</a> after
-every commit.</p>
-EOF1
-
-my @branches = ();
-opendir (DIR, "langspec");
-while (my $fn = readdir(DIR)) {
-    next if $fn =~ /^\.\.?$/;
-    next if $fn eq 'xproc20';
-    push (@branches, $fn) if -d "langspec/$fn";
+my @specs = ();
+open(FIND, "find langspec -type f \\( -name \"index.html\" -o -name \"Overview.html\" \\) -print |");
+while (<FIND>) {
+    chop;
+    push (@specs, $_);
 }
-closedir (DIR);
+close (FIND);
 
-my $pubdate = pubdate("langspec", "xproc20");
-
-print <<EOF2;
-<dl>
-<dt>My “stable” branch:</dt>
-<dd>
-<ul>
-<li><a href="/specification/langspec/xproc20/head">XProc 2.0: An XML Pipeline Language</a>
-specification ($pubdate)</li>
-<li><a href="/specification/langspec/xproc20/head/ns/xproc.html">Namespace document</a>
-for <code>http://www.w3.org/ns/xproc</code></li>
-<li><a href="/specification/langspec/xproc20/head/ns/xproc-step.html">Namespace document</a>
-for <code>http://www.w3.org/ns/xproc-step</code></li>
-<li><a href="/specification/langspec/xproc20/head/ns/xproc-error.html">Namespace document</a>
-for <code>http://www.w3.org/ns/xproc-error</code></li>
-</ul>
-</dd>
-EOF2
-
-foreach my $branch (sort { $a cmp $b } @branches) {
-    $pubdate = pubdate("langspec", $branch);
-    print "<dt>$branch</dt>\n";
-    print "<dd>\n";
-    print "<ul>\n";
-    print "<li><a href=\"/specification/langspec/$branch/head\">XProc 2.0: An XML Pipeline Language</a> specification ($pubdate)</li>\n";
-    print "<li><a href=\"/specification/langspec/$branch/head/ns/xproc.html\">Namespace document</a> for <code>http://www.w3.org/ns/xproc</code></li>\n";
-    print "<li><a href=\"/specification/langspec/$branch/head/ns/xproc-step.html\">Namespace document</a> for <code>http://www.w3.org/ns/xproc-step</code></li>\n";
-    print "<li><a href=\"/specification/langspec/$branch/head/ns/xproc-error.html\">Namespace document</a> for <code>http://www.w3.org/ns/xproc-error</code></li>\n";
-    print "</ul>\n</dd>\n\n";
+print "<ul>\n";
+foreach my $spec (@specs) {
+    my $linktext = $spec;
+    $linktext =~ s/\/Overview.html$//;
+    $linktext =~ s/\/index.html$//;
+    my $pubdate = pubdate($spec);
+    print "<li><a href='$spec'>$linktext</a>";
+    print ", $pubdate" if $pubdate ne '';
+    print "</li>\n";
 }
-
-print "</dl>\n\n";
+print "</ul>\n";
 
 print <<EOF3;
 <p>These documents have all the normative force one would expect of the
@@ -78,8 +54,7 @@ exit 0;
 
 sub pubdate {
     my $spec = shift;
-    my $branch = shift;
-    open (F, "$spec/$branch/head/index.html") || return "date unknown";
+    open (F, $spec) || return "date unknown";
     read (F, $_, 4096);
     close (F);
     s/^.*?<h2>(.*?)<\/h2>.*$/$1/s;
@@ -87,7 +62,7 @@ sub pubdate {
     if (/\d+\s+\S+\s+\d+/) {
         $_ = $MATCH;
     } else {
-        $_ = "date unknown"
+        $_ = "";
     }
 
     return $_;
