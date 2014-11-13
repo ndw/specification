@@ -17,25 +17,25 @@ print "<cite>XProc 2.0: An XML Pipeline Language</cite> baked fresh\n";
 print "automagically by <a href=\"http://travis-ci.org/\">Travis CI</a> after\n";
 print "every commit.</p>\n";
 
-my @specs = ();
-open(FIND, "find langspec -type f \\( -name \"index.html\" -o -name \"Overview.html\" \\) -print |");
-while (<FIND>) {
-    chop;
-    push (@specs, $_);
+my @branches = ();
+opendir(DIR, "langspec");
+while (readdir(DIR)) {
+    next if /^\.\.?$/;
+    next if ! -d "langspec/$_";
+    push (@branches, $_) unless $_ eq 'xproc20';
 }
-close (FIND);
+closedir(DIR);
 
-print "<ul>\n";
-foreach my $spec (@specs) {
-    my $linktext = $spec;
-    $linktext =~ s/\/Overview.html$//;
-    $linktext =~ s/\/index.html$//;
-    my $pubdate = pubdate($spec);
-    print "<li><a href='$spec'>$linktext</a>";
-    print ", $pubdate" if $pubdate ne '';
-    print "</li>\n";
+print "<dl>\n";
+foreach my $branch ("xproc20", sort { $a cmp $b } @branches) {
+    my $fn = "langspec/$branch/head/xproc20/index.html";
+    my $date = pubdate($fn);
+    print "<dt>The <em>$branch</em> branch, $date:</dt>\n";
+    print "<dd>\n";
+    &showspec($branch);
+    print "</dd>\n";
 }
-print "</ul>\n";
+print "</dl>\n";
 
 print <<EOF3;
 <p>These documents have all the normative force one would expect of the
@@ -66,4 +66,25 @@ sub pubdate {
     }
 
     return $_;
+}
+
+sub title {
+    my $spec = shift;
+    open (F, $spec) || return "date unknown";
+    read (F, $_, 4096);
+    close (F);
+    s/^.*?<div class=.title.>(.*?)<\/div>.*$/$1/s;
+    return $_;
+}
+
+sub showspec {
+    my $branch = shift;
+    print "<ul>\n";
+    foreach my $name ("xproc20", "xproc20-steps", "ns-p", "ns-c", "ns-err") {
+        my $href = "langspec/$branch/head/$name/";
+        my $fn = "$href/index.html";
+        my $title = title($fn);
+        print "<li><a href=\"$href\">$title</a></li>\n";
+    }
+    print "</ul>\n";
 }
