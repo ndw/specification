@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: Standard Step Library</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.7" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="prism.css" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/W3C-WD.css" /><link rel="alternate" title="XML" href="langsteps.xml" /><link rel="alternate" title="ChangeLog" href="changelog.html" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1>XProc 2.0: Standard Step Library</h1><h2>W3C First Public Working Draft <time datetime="2014-12-16">16 December 2014</time></h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc20-steps/">http://www.w3.org/TR/xproc20-steps/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="langsteps.xml">XML</a>, <a href="changelog.html">ChangeLog</a>, 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>XProc 2.0: Standard Step Library</title><meta charset="utf-8" /><meta name="generator" content="DocBook XSL 2.0 Stylesheets V2.0.7" /><script type="text/javascript" src="https://docbook.github.com/release/2.0.5/base/js/dbmodnizr.js"></script><link href="prism.css" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="xproc.css" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/base.css" /><link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/W3C-WD.css" /><link rel="alternate" title="XML" href="xproc20-steps.xml" /><link rel="alternate" title="Latest editor's draft" href="http://www.w3.org/XML/XProc/docs/langspec.html" /><link rel="alternate" title="Latest Public Working Draft" href="http://www.w3.org/TR/xproc/" /></head><body><div class="specification"><div class="head" id="spec.head"><p><a href="http://www.w3.org/"><img height="48" width="72" alt="W3C" src="http://www.w3.org/Icons/w3c_home" /></a></p><h1>XProc 2.0: Standard Step Library</h1><h2>W3C First Public Working Draft <time datetime="2014-12-18">18 December 2014</time></h2><dl><dt>This Version:</dt><dd><a href="https://ndw.github.io/specification/langspec">https://ndw.github.io/specification/langspec</a></dd><dt>Latest Version:</dt><dd><a href="http://www.w3.org/TR/xproc20-steps/">http://www.w3.org/TR/xproc20-steps/</a></dd><dt>Editors:</dt><dd><span class="personname">Norman Walsh</span>, <span class="orgname">MarkLogic Corporation</span> <code class="email">&lt;<a href="mailto:norman.walsh@marklogic.com">norman.walsh@marklogic.com</a>&gt;</code></dd><dd><span class="personname">Alex Milowski</span>, <span class="orgname">Invited expert</span> <code class="email">&lt;<a href="mailto:alex@milowski.org">alex@milowski.org</a>&gt;</code></dd><dd><span class="personname">Henry S. Thompson</span>, <span class="orgname">University of Edinburgh</span> <code class="email">&lt;<a href="mailto:ht@inf.ed.ac.uk">ht@inf.ed.ac.uk</a>&gt;</code></dd></dl><p>This document is also available in these non-normative formats: <a href="xproc20-steps.xml">XML</a>, 
 	  automatic <a href="diff.html">change markup</a> from the previous draft
           courtesy of <a href="http://www.deltaxml.com/">DeltaXML</a>.</p><p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2014 <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.</p><hr /><div class="abstract"><h2>Abstract</h2>
 <p>This specification describes the standard step vocabulary of
@@ -77,7 +77,7 @@ input document unless the step's process explicitly sets an
 description explicitly states how the base URI is constructed.</p>
 </li><li>
 <p>Unless otherwise specified, steps in this library do not
-modify the <em class="glossterm"><a href="../xproc20/#dt-document-properties">document properties</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em> of the documents
+modify the <em class="glossterm"><a href="../xproc20#dt-document-properties">document properties</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em> of the documents
 that flow through them.</p>
 </li></ul></div>
 
@@ -88,7 +88,7 @@ element for result information:</p>
 
 <p>When a step uses an XPath to compute an option value, the XPath
 context is as defined in
-<span class="xspecref"><a href="../xproc20/#xpath-context">Section 2.7, “XPaths in XProc”</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span>.</p>
+<span class="xspecref"><a href="../xproc20#xpath-context">Section 2.7, “XPaths in XProc”</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span>.</p>
 
 <p>When a step specifies a particular version of a technology,
 implementations <span class="rfc2119" id="introduction.8.1">must</span> implement that
@@ -134,7 +134,7 @@ not match an element.</p>
 If the lexical value does not contain a colon, then the <code class="tag-attribute">attribute-namespace</code> may be used to specify the
 namespace of the attribute. In that case, the <code class="tag-attribute">attribute-prefix</code> may be specified to suggest a
 prefix for the attribute name. <a id="err.inline.D0034"></a>It is a
-<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0034"><code class="errqname">err:XD0034</code></a>) to specify a new namespace or
+<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="../xproc20#err.D0034"><code class="errqname">err:XD0034</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>) to specify a new namespace or
 prefix if the lexical value of the specified name contains a
 colon.
 The corresponding expanded name is used to construct the attribute.</p>
@@ -164,7 +164,7 @@ or any other prefix that resolves to the namespace name
 added explicitly by this step, adding an attribute whose name is in a
 namespace for which there is no namespace declaration in scope on the
 matched element may result in a namespace binding being added by
-<span class="xspecref"><a href="../xproc20/#namespace-fixup">Section 2.5.1, “Namespace Fixup on XML Outputs”</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span>.</p>
+<span class="xspecref"><a href="../xproc20#namespace-fixup">Section 2.5.1, “Namespace Fixup on XML Outputs”</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span>.</p>
 
 <p>If an attribute named
 <code class="tag-attribute">xml:base</code> is added or changed, the base URI
@@ -251,8 +251,8 @@ a valid media type of the form
 
 <ul><li>
 <p>Casting from one XML media type to another simply changes the
-“<code class="literal">content-type</code>” <em class="glossterm"><a href="../xproc20/#dt-document-properties">document
-property</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
+“<code class="literal">content-type</code>” <em class="glossterm"><a href="../xproc20#dt-document-properties">document
+property</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.
 </p>
 </li><li id="c.data">
 <p>Casting from a non-XML media type to an XML media type produces an
@@ -269,7 +269,7 @@ representation of the non-XML content.</p>
 <p>Casting from an XML media type to a non-XML media type
 <span class="rfc2119" id="c.cast-content-type.5.3.1.1">must</span> support the case where the input document is
 a <a href="#c.data"><code class="tag-element">c:data</code></a> document. The resulting document will
-have the specified media type and a <em class="glossterm"><a href="../xproc20/#dt-representation">representation</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em> that
+have the specified media type and a <em class="glossterm"><a href="../xproc20#dt-representation">representation</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em> that
 is the content of the <a href="#c.data"><code class="tag-element">c:data</code></a> element after decoding the base64
 encoded content.</p>
 <p><a id="err.inline.C1004"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
@@ -283,12 +283,12 @@ error</a></em> (<a href="#err.C1006"><code class="errqname">err:XC1006</code></
 not the same as the <code class="tag-attribute">content-type</code> specified on
 the <a href="#c.data"><code class="tag-element">c:data</code></a> element.
 </p>
-<p><a id="impl-1"></a>Casting from an XML media type to a non-XML media type when
+<p><span id="impl-1">Casting from an XML media type to a non-XML media type when
 the input document is not a <a href="#c.data"><code class="tag-element">c:data</code></a> document is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 </li><li>
-<p><a id="impl-2"></a>What happens when one non-XML media type is cast to another
-non-XML media type is <em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
+<p><span id="impl-2">What happens when one non-XML media type is cast to another
+non-XML media type is <em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span>
 <a id="err.inline.C1003"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
 error</a></em> (<a href="#err.C1003"><code class="errqname">err:XC1003</code></a>) if the <code class="tag-element">p:cast-content-type</code> step
 cannot perform the requested cast.</p>
@@ -388,8 +388,8 @@ directory.</p>
 <span class="rfc2119" id="c.directory-list.4.2">must</span> be an <code class="type">anyURI</code>. It is interpreted
 as an IRI reference. If it is relative, it is made absolute against
 the base URI of the element on which it is specified
-(<a href="../xproc20/#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> or <code class="tag-element">p:directory-list</code> in the case of a
-<span class="xspecref"><a href="../xproc20/#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span> value).</p>
+(<a href="../xproc20#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> or <code class="tag-element">p:directory-list</code> in the case of a
+<span class="xspecref"><a href="../xproc20#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span> value).</p>
 
 <p><a id="err.inline.C0017"></a>It is a
 <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.C0017"><code class="errqname">err:XC0017</code></a>) if the absolute path does not
@@ -398,11 +398,11 @@ identify a directory. <a id="err.inline.C0012"></a>It is a
 path are not available to the step due to access restrictions in the
 environment in which the pipeline is run.</p>
 
-<p><a id="impl-3"></a>Conformant processors <span class="rfc2119" id="c.directory-list.6.1.1">must</span> support directory paths whose
+<p><span id="impl-3">Conformant processors <span class="rfc2119" id="c.directory-list.6.1.1">must</span> support directory paths whose
 scheme is <code class="code">file</code>. It is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em> what other schemes are
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em> what other schemes are
 supported by <code class="tag-element">p:directory-list</code>, and what the interpretation
-of 'directory', 'file' and 'contents' is for those schemes.
+of 'directory', 'file' and 'contents' is for those schemes.</span>
 </p>
 
 <p>If present, the value of the <code class="option">include-filter</code>
@@ -444,10 +444,10 @@ determined to be special.</p>
 not determined to be special.</p>
 <p id="d402e45" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:file<br />  <strong>name</strong> = <var>string</var> /&gt;</code></p>
 </li><li>
-<p id="cv.other"><a id="impl-4"></a>Any file or directory determined to be
+<p id="cv.other"><span id="impl-4">Any file or directory determined to be
 special by the <code class="tag-element">p:directory-list</code> step may be output using a
 <a href="#cv.other"><code class="tag-element">c:other</code></a> element but the criteria for marking a file as
-special are <em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
+special are <em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span>
 </p>
 <p id="d402e57" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:other<br />  <strong>name</strong> = <var>string</var> /&gt;</code></p>
 </li></ul></div>
@@ -462,9 +462,9 @@ appears within the top-level <a href="#cv.directory"><code class="tag-element">c
 value is a relative IRI reference, giving the (local) file or
 directory name.</p>
 
-<p><a id="impl-5"></a>Any attributes other than <code class="tag-attribute">name</code> on
+<p><span id="impl-5">Any attributes other than <code class="tag-attribute">name</code> on
 <a href="#cv.file"><code class="tag-element">c:file</code></a>, <a href="#cv.directory"><code class="tag-element">c:directory</code></a>, or <a href="#cv.other"><code class="tag-element">c:other</code></a>
-are <em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+are <em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 </section>
 
@@ -483,20 +483,20 @@ to the step.</p>
 If the lexical value does not contain a colon, then the <code class="tag-attribute">code-namespace</code> may be used to specify the
 namespace of the code. In that case, the <code class="tag-attribute">code-prefix</code> may be specified to suggest a
 prefix for the code. <a id="err.inline.D0034.1"></a>It is a
-<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0034"><code class="errqname">err:XD0034</code></a>) to specify a new namespace or
+<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="../xproc20#err.D0034"><code class="errqname">err:XD0034</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>) to specify a new namespace or
 prefix if the lexical value of the specified name contains a
 colon.</p>
 
 <p>This step uses the document provided on its input as the content
 of the error raised. An instance of the
-<a href="../xproc20/#cv.errors">c:errors</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> element will be produced on the error output port, as is
+<a href="../xproc20#cv.errors">c:errors</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> element will be produced on the error output port, as is
 always the case for <em class="glossterm"><a href="#dt-dynamic-error">dynamic errors</a></em>.
-The error generated can be caught by a <a href="../xproc20/#p.try">p:try</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> just like any
+The error generated can be caught by a <a href="../xproc20#p.try">p:try</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> just like any
 other dynamic error.</p>
 
 <p>For authoring convenience, the <code class="tag-element">p:error</code> step is
 declared with a single, primary output port. With respect to
-<em class="glossterm"><a href="../xproc20/#dt-connection">connections</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>, this port behaves like
+<em class="glossterm"><a href="../xproc20#dt-connection">connections</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>, this port behaves like
 any other output port even though nothing can ever
 appear on it since the step always fails.</p>
 
@@ -583,7 +583,7 @@ based on a (possibly dynamically constructed) XPath select expression.</p>
 
 <p class="element-syntax element-syntax-declare-step-rqd"><span class="decl"><code>&lt;p:declare-step</code> <code class="attr type-attr">type</code><code>="</code><code class="value type-value">p:filter</code><code>"</code><code>&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">source</code><code>"</code> <code class="attr content-types-attr">content-types</code><code>="</code><code class="value content-types-value">application/xml text/xml */*+xml</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:output</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">result</code><code>"</code> <code class="attr sequence-attr">sequence</code><code>="</code><code class="value sequence-value">true</code><code>"</code><code>/&gt;</code></span><br />     <span class="opt-req"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">select</code><code>"</code> <code class="attr required-attr">required</code><code>="</code><code class="value required-value">true</code><code>"</code> <code class="attr as-attr">as</code><code>="</code><code class="value as-value">xs:string</code><code>"</code><code>/&gt;</code><code>      </code><code class="comment">&lt;!-- </code><span class="opt-type">XPathExpression</span><code class="comment"> --&gt;</code></span><br /><code>&lt;/p:declare-step&gt;</code></p>
 
-<p>This step behaves just like an <a href="../xproc20/#p.input">p:input</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> with
+<p>This step behaves just like an <a href="../xproc20#p.input">p:input</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> with
 a <code class="tag-attribute">select</code> expression except that the select
 expression is computed dynamically.</p>
 
@@ -677,10 +677,10 @@ that authorization fails, the request is not retried.</p>
 are “Basic” or “Digest” but other values are allowed.
 If the authentication method is “Basic” or “Digest”, authentication
 is handled as per [<a href="#rfc2617"><span class="abbrev">RFC 2617</span></a>].
-<a id="impl-6"></a>The
+<span id="impl-6">The
 interpretation of <code class="code">auth-method</code> values on
 <code class="tag-element">c:request</code> other than “Basic” or “Digest” is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 <p><a id="err.inline.C0003"></a>It
 is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.C0003"><code class="errqname">err:XC0003</code></a>) if a <code class="option">username</code>
@@ -695,7 +695,7 @@ and "Digest" authentication per [<a href="#rfc2617"><span class="abbrev">RFC 261
   <p>The <code class="code">c:header</code> element specifies a
 header name and value, either for inclusion in a request, or as received in a response.</p>
 
-<p id="d539e8" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:header<br />  <strong>name</strong> = <var>string</var><br />  <strong>value</strong> = <var>string</var> /&gt;</code></p>
+<p id="cv.header" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:header<br />  <strong>name</strong> = <var>string</var><br />  <strong>value</strong> = <var>string</var> /&gt;</code></p>
 
 <p>The request is formulated from the attribute values on the
 <code class="tag-element">c:request</code> element and its
@@ -734,7 +734,7 @@ of the step or protocol.
 body, per [<a href="#rfc1521"><span class="abbrev">RFC 1521</span></a>], either for inclusion in a
 request or as received in a response.</p>
 
-<p id="d595e0" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:multipart<br />  <strong>content-type</strong> = <var>string</var><br />  <strong>boundary</strong> = <var>string</var>&gt;<br />    <a href="#cv.body">c:body</a>+<br />&lt;/c:multipart&gt;</code></p>
+<p id="cv.multipart" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:multipart<br />  <strong>content-type</strong> = <var>string</var><br />  <strong>boundary</strong> = <var>string</var>&gt;<br />    <a href="#cv.body">c:body</a>+<br />&lt;/c:multipart&gt;</code></p>
 
 <p>In the context of a request, the media type of the <a href="#cv.multipart"><code class="tag-element">c:multipart</code></a>
 <span class="rfc2119" id="c.request_body.4.2">must</span> be a multipart media type (i.e. have a main type of 'multipart'). If the <code class="code">content-type</code> attribute is not specified, a value of "multipart/mixed" will be assumed.</p>
@@ -754,7 +754,7 @@ option and the <code class="option">content-type</code> option then the two valu
 
 <p>The <a href="#cv.body"><code class="tag-element">c:body</code></a> element holds the body or body part of the message.  Each of the attributes holds controls some aspect of the encoding the request body or decoding the body element's content when the request is formulated.  These are specified as follows:</p>
 
-<p id="d595e15" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:body<br />  <strong>content-type</strong> = <var>string</var><br />  encoding? = <var>string</var><br />  id? = <var>string</var><br />  description? = <var>string</var><br />  disposition? = <var>string</var>&gt;<br />    <var>anyElement</var>*<br />&lt;/c:body&gt;</code></p>
+<p id="cv.body" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:body<br />  <strong>content-type</strong> = <var>string</var><br />  encoding? = <var>string</var><br />  id? = <var>string</var><br />  description? = <var>string</var><br />  disposition? = <var>string</var>&gt;<br />    <var>anyElement</var>*<br />&lt;/c:body&gt;</code></p>
 
 <p>The <code class="code">content-type</code> attribute specifies the media type
 of the body or body part, that is, the value of its
@@ -765,9 +765,9 @@ or text, the content must already be base64-encoded.</p>
 element content for formulating the body. A value of
 <code class="literal">base64</code> indicates the element's content is a base64
 encoded string whose byte stream should be sent as the message body.
-<a id="impl-7"></a>An implementation may support encodings other than
+<span id="impl-7">An implementation may support encodings other than
 <code class="literal">base64</code> but these encodings and their names are
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span>
 <a id="err.inline.C0052"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
 error</a></em> (<a href="#err.C0052"><code class="errqname">err:XC0052</code></a>) if the encoding specified is not supported by the
 implementation.</p>
@@ -876,7 +876,7 @@ attribute and the headers and entity body are processing into
 <a href="#cv.header"><code class="tag-element">c:header</code></a> and <a href="#cv.multipart"><code class="tag-element">c:multipart</code></a> or <a href="#cv.body"><code class="tag-element">c:body</code></a>
 content.</p>
 
-<p id="d656e32" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:response<br />  status? = <var>integer</var>&gt;<br />    (<a href="#cv.header">c:header</a>*,<br />     (<a href="#cv.multipart">c:multipart</a> | <br />      <a href="#cv.body">c:body</a>)?)<br />&lt;/c:response&gt;</code></p>
+<p id="c.response" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:response<br />  status? = <var>integer</var>&gt;<br />    (<a href="#cv.header">c:header</a>*,<br />     (<a href="#cv.multipart">c:multipart</a> | <br />      <a href="#cv.body">c:body</a>)?)<br />&lt;/c:response&gt;</code></p>
 
 <p>The value of the <code class="code">detailed</code> attribute determines the
 content of the result document. If it is <code class="literal">true</code>, the
@@ -928,11 +928,11 @@ if they are returned by the server.
 
 <p>With one exception, in version 1.0 of XProc, the
 <a href="#c.http-request"><code class="tag-element">p:http-request</code></a> step does not provide any standard
-mechanisms for managing cookies. <a id="impl-8"></a>Pipeline authors that need to
+mechanisms for managing cookies. <span id="impl-8">Pipeline authors that need to
 preserve cookies across several <a href="#c.http-request"><code class="tag-element">p:http-request</code></a> calls in the
 same pipeline or across multiple invocations of the same or different
 pipelines will have to rely on
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em> mechanisms.
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em> mechanisms.</span>
 </p>
 
 <p>The exception arises in the case of redirection. If a redirect
@@ -958,9 +958,9 @@ a <a href="#cv.multipart"><code class="tag-element">c:multipart</code></a> eleme
 <p>Although it is technically possible for any of the individual
 parts of a multipart message to <em>also</em> be
 multipart, XProc does not provide a standard representation for such
-messages. <a id="impl-9"></a>The interpretation of a multipart message inside
+messages. <span id="impl-9">The interpretation of a multipart message inside
 another multipart message is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 </div>
 
 <p>The result of the <a href="#c.http-request"><code class="tag-element">p:http-request</code></a> step is an XML
@@ -1124,7 +1124,7 @@ element and stores that label in the specified attribute.</p>
 If the lexical value does not contain a colon, then the <code class="tag-attribute">attribute-namespace</code> may be used to specify the
 namespace of the attribute name. In that case, the <code class="tag-attribute">attribute-prefix</code> may be specified to suggest a
 prefix for the attribute name. <a id="err.inline.D0034.2"></a>It is a
-<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0034"><code class="errqname">err:XD0034</code></a>) to specify a new namespace or
+<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="../xproc20#err.D0034"><code class="errqname">err:XD0034</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>) to specify a new namespace or
 prefix if the lexical value of the specified name contains a
 colon.
 </p>
@@ -1183,13 +1183,13 @@ result a document specified by an IRI.</p>
 <span class="rfc2119" id="c.load.4.2">must</span> be an <code class="type">anyURI</code>. It is interpreted
 as an IRI reference. If it is relative, it is made absolute against
 the base URI of the element on which it is specified
-(<a href="../xproc20/#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> or <code class="tag-element">p:load</code> in the case of a
-<span class="xspecref"><a href="../xproc20/#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span> value).</p>
+(<a href="../xproc20#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> or <code class="tag-element">p:load</code> in the case of a
+<span class="xspecref"><a href="../xproc20#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span> value).</p>
 
 <p>The value of the <code class="option">dtd-validate</code> option
 <span class="rfc2119" id="c.load.5.2">must</span> be a boolean.</p>
 
-<p>The <code class="tag-element">p:load</code> step is the same as <a href="../xproc20/#p.document">p:document</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup>
+<p>The <code class="tag-element">p:load</code> step is the same as <a href="../xproc20#p.document">p:document</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>
 with two additions:</p>
 
 <div class="orderedlist">
@@ -1204,11 +1204,11 @@ pipeline.</p>
 </li></ol></div>
 
 <p>When <code class="option">dtd-validate</code> is <code class="literal">false</code>,
-<code class="tag-element">p:load</code> processing is the same as <a href="../xproc20/#p.document">p:document</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup>
+<code class="tag-element">p:load</code> processing is the same as <a href="../xproc20#p.document">p:document</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>
 processing on the computed <code class="option">href</code> value.</p>
 
 <p>When <code class="option">dtd-validate</code> is <code class="literal">true</code>,
-<code class="tag-element">p:load</code> processing is the same as <a href="../xproc20/#p.document">p:document</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup>
+<code class="tag-element">p:load</code> processing is the same as <a href="../xproc20#p.document">p:document</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>
 processing on the computed <code class="option">href</code> value but
 <span class="rfc2119" id="c.load.9.6">must</span> use a validating parser. <a id="err.inline.C0027"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.C0027"><code class="errqname">err:XC0027</code></a>) if the
 document is not valid or the step doesn't support DTD
@@ -1241,8 +1241,8 @@ nodes.</p>
 <span class="rfc2119" id="c.make-absolute-uris.5.2">must</span> be an <code class="type">anyURI</code>. It is interpreted
 as an IRI reference. If it is relative, it is made absolute against
 the base URI of the element on which it is specified
-(<a href="../xproc20/#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> or <code class="tag-element">p:make-absolute-uris</code> in the case of
-a <span class="xspecref"><a href="../xproc20/#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span>
+(<a href="../xproc20#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> or <code class="tag-element">p:make-absolute-uris</code> in the case of
+a <span class="xspecref"><a href="../xproc20#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span>
 value).</p>
 
 <p>For every element or attribute in the input document which
@@ -1256,12 +1256,12 @@ attribute's element or the matched element's base URI unless the
 <code class="option">base-uri</code> option is specified, the option value is
 used as the base URI regardless of any contextual base URI value in
 the document. This option value is resolved against the base URI of
-the <a href="../xproc20/#p.option">p:option</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> element used to set the option.</p>
+the <a href="../xproc20#p.option">p:option</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> element used to set the option.</p>
 
-<p><a id="impl-10"></a>If the IRI reference specified by the <code class="option">base-uri</code> option
+<p><span id="impl-10">If the IRI reference specified by the <code class="option">base-uri</code> option
 on <code class="tag-element">p:make-absolute-uris</code> is
 not valid, or if it is absent and the input document has no base URI,
-the results are <em class="glossterm"><a href="../xproc20/#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
+the results are <em class="glossterm"><a href="../xproc20#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span>
 </p>
 
 </section>
@@ -1391,7 +1391,7 @@ does not contain a colon, then the <code class="tag-attribute">wrapper-namespace
 may be used to specify the namespace of the wrapper. In that case, the
 <code class="tag-attribute">wrapper-prefix</code> may be specified to suggest a
 prefix for the wrapper element.
-<a id="err.inline.D0034.3"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0034"><code class="errqname">err:XD0034</code></a>)
+<a id="err.inline.D0034.3"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="../xproc20#err.D0034"><code class="errqname">err:XD0034</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>)
 to specify a new namespace or prefix if the lexical value of the specified
 name contains a colon.</p>
 
@@ -1429,9 +1429,9 @@ as a <a href="#cv.param-set"><code class="tag-element">c:param-set</code></a> do
 The resulting <a href="#cv.param"><code class="tag-element">c:param</code></a> elements are wrapped in a
 <a href="#cv.param-set"><code class="tag-element">c:param-set</code></a> and the parameter set document is written
 to the <code class="port">result</code> port.
-<a id="impl-11"></a>The
+<span id="impl-11">The
 order in which <a href="#cv.param"><code class="tag-element">c:param</code></a> elements occur in the <a href="#cv.param-set"><code class="tag-element">c:param-set</code></a> is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 <p>For consistency and user convenience, if any of the parameters
 have names that are in a namespace, the
@@ -1457,7 +1457,7 @@ input.</p>
 specified, then the expanded name of the parameter is constructed from
 the specified namespace and the <code class="tag-attribute">name</code>
 value. <a id="err.inline.D0025"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
-error</a></em> (<a href="#err.D0025"><code class="errqname">err:XD0025</code></a>) if the <code class="tag-attribute">namespace</code>
+error</a></em> (<a href="../xproc20#err.D0025"><code class="errqname">err:XD0025</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>) if the <code class="tag-attribute">namespace</code>
 attribute is specified, the <code class="tag-attribute">name</code> contains
 a colon, and the specified namespace is not the same as the in-scope
 namespace binding for the specified prefix.
@@ -1475,7 +1475,7 @@ namespace.</p>
 
 <p>Any namespace-qualified attribute names that appear on the
 <code class="tag-element">c:param</code> element are ignored. <a id="err.inline.D0014"></a>It is a
-<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0014"><code class="errqname">err:XD0014</code></a>) for any unqualified attribute
+<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="../xproc20#err.D0014"><code class="errqname">err:XD0014</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>) for any unqualified attribute
 names other than “<code class="literal">name</code>”,
 “<code class="literal">namespace</code>”, or “<code class="literal">value</code>” to
 appear on a <code class="tag-element">c:param</code> element.</p>
@@ -1491,12 +1491,12 @@ parameter input.</p>
 
 <p>The <code class="tag-element">c:param-set</code> contains zero or more
 <a href="#cv.param"><code class="tag-element">c:param</code></a> elements. <a id="err.inline.D0018"></a>It is a
-<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0018"><code class="errqname">err:XD0018</code></a>) if the parameter list contains
+<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="../xproc20#err.D0018"><code class="errqname">err:XD0018</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>) if the parameter list contains
 any elements other than <a href="#cv.param"><code class="tag-element">c:param</code></a>.</p>
 
 <p>Any namespace-qualified attribute names that appear on the
 <code class="tag-element">c:param-set</code> element are ignored. <a id="err.inline.D0014.1"></a>It is
-a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0014"><code class="errqname">err:XD0014</code></a>) for any unqualified attribute
+a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="../xproc20#err.D0014"><code class="errqname">err:XD0014</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>) for any unqualified attribute
 names to appear on a <code class="tag-element">c:param-set</code>
 element.</p>
 </section>
@@ -1523,7 +1523,7 @@ attribute or processing instruction nodes.</p>
 If the lexical value does not contain a colon, then the <code class="tag-attribute">new-namespace</code> may be used to specify the
 namespace of the new name. In that case, the <code class="tag-attribute">new-prefix</code> may be specified to suggest a
 prefix for the new name. <a id="err.inline.D0034.4"></a>It is a
-<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0034"><code class="errqname">err:XD0034</code></a>) to specify a new namespace or
+<em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="../xproc20#err.D0034"><code class="errqname">err:XD0034</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>) to specify a new namespace or
 prefix if the lexical value of the specified name contains a
 colon.
 </p>
@@ -1615,7 +1615,7 @@ If no elements match, the step will not change any elements.</p>
 copied from the <code class="port">attributes</code> use namespaces, prefixes, or
 prefixes bound to different namespaces, the document produced on the
 <code class="port">result</code> output port will require
-<span class="xspecref"><a href="../xproc20/#namespace-fixup">Section 2.5.1, “Namespace Fixup on XML Outputs”</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span>.</p>
+<span class="xspecref"><a href="../xproc20#namespace-fixup">Section 2.5.1, “Namespace Fixup on XML Outputs”</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span>.</p>
 
 <p>If an attribute named
 <code class="tag-attribute">xml:base</code> is added or changed, the base URI
@@ -1628,12 +1628,12 @@ of the element <span class="rfc2119" id="c.set-attributes.9.2">must</span> also 
 <section id="c.set-properties" class="section"><h4>1.1.23 p:set-properties</h4>
 
 
-<p>The <code class="tag-element">p:set-properties</code> step sets <em class="glossterm"><a href="../xproc20/#dt-document-properties">document
-properties</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em> on the source document.</p>
+<p>The <code class="tag-element">p:set-properties</code> step sets <em class="glossterm"><a href="../xproc20#dt-document-properties">document
+properties</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em> on the source document.</p>
 
 <p class="element-syntax element-syntax-declare-step-rqd"><span class="decl"><code>&lt;p:declare-step</code> <code class="attr type-attr">type</code><code>="</code><code class="value type-value">p:set-properties</code><code>"</code><code>&gt;</code></span><br />     <span class="input"><code>&lt;p:input</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">source</code><code>"</code> <code class="attr content-types-attr">content-types</code><code>="</code><code class="value content-types-value">*/*</code><code>"</code><code>/&gt;</code></span><br />     <span class="input"><code>&lt;p:output</code> <code class="attr port-attr">port</code><code>="</code><code class="value port-value">result</code><code>"</code><code>/&gt;</code></span><br />     <span class="opt-req"><code>&lt;p:option</code> <code class="attr name-attr">name</code><code>="</code><code class="value name-value">properties</code><code>"</code> <code class="attr required-attr">required</code><code>="</code><code class="value required-value">true</code><code>"</code> <code class="attr as-attr">as</code><code>="</code><code class="value as-value">map(xs:string,xs:string)</code><code>"</code><code>/&gt;</code><code></code></span><br /><code>&lt;/p:declare-step&gt;</code></p>
 
- <p>The <em class="glossterm"><a href="../xproc20/#dt-document-properties">document properties</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em> of the document
+ <p>The <em class="glossterm"><a href="../xproc20#dt-document-properties">document properties</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em> of the document
 on the <code class="port">source</code> port are augmented with the values specified
 in the <code class="option">properties</code> option. The document produced on
 the <code class="port">result</code> port has the same representation but the
@@ -1685,7 +1685,7 @@ documents (which may be empty) to the <code class="port">matched</code> port.
 All other documents are written to the <code class="port">not-matched</code> port,
 irrespective of whether or not they match.</p>
 
-<p>The <span class="xspecref"><a href="../xproc20/#xpath-context">XPath context</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span> for the
+<p>The <span class="xspecref"><a href="../xproc20#xpath-context">XPath context</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span> for the
 <code class="option">test</code> option changes over time. For each document that
 appears on the <code class="code">source</code> port, the expression is evaluated
 with that document as the context document. The context position
@@ -1721,8 +1721,8 @@ location of the stored document.</p>
 <p>The value of the <code class="option">href</code> option
 <span class="rfc2119" id="c.store.4.2">must</span> be an <code class="type">anyURI</code>. If it is relative,
 it is made absolute against the base URI of the element on which it is
-specified (<a href="../xproc20/#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> or <code class="tag-element">p:store</code> in the case
-of a <span class="xspecref"><a href="../xproc20/#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span>
+specified (<a href="../xproc20#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> or <code class="tag-element">p:store</code> in the case
+of a <span class="xspecref"><a href="../xproc20#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span>
 value).</p>
 
 <p>The step attempts to store the XML document to the specified
@@ -1817,10 +1817,10 @@ type <code class="literal">application/xml</code>, and must use a standard XML
 parser for it. <a id="err.inline.C0051"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
 error</a></em> (<a href="#err.C0051"><code class="errqname">err:XC0051</code></a>) if the content-type specified is not supported by
 the implementation.
-<a id="impl-12"></a>Behavior of
+<span id="impl-12">Behavior of
 <code class="tag-element">p:unescape-markup</code> for <code class="option">content-type</code>s other
 than <code class="literal">application/xml</code> is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 <p>The <code class="option">encoding</code> option specifies how the data is
 encoded. All implementations <span class="rfc2119" id="c.unescape-markup.9.2">must</span> support the
@@ -1919,7 +1919,7 @@ does not contain a colon, then the <code class="tag-attribute">wrapper-namespace
 may be used to specify the namespace of the wrapper. In that case, the
 <code class="tag-attribute">wrapper-prefix</code> may be specified to suggest a
 prefix for the wrapper element.
-<a id="err.inline.D0034.5"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0034"><code class="errqname">err:XD0034</code></a>)
+<a id="err.inline.D0034.5"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="../xproc20#err.D0034"><code class="errqname">err:XD0034</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>)
 to specify a new namespace or prefix if the lexical value of the specified
 name contains a colon.</p>
 
@@ -1980,7 +1980,7 @@ does not contain a colon, then the <code class="tag-attribute">wrapper-namespace
 may be used to specify the namespace of the wrapper. In that case, the
 <code class="tag-attribute">wrapper-prefix</code> may be specified to suggest a
 prefix for the wrapper element.
-<a id="err.inline.D0034.6"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0034"><code class="errqname">err:XD0034</code></a>)
+<a id="err.inline.D0034.6"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="../xproc20#err.D0034"><code class="errqname">err:XD0034</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>)
 to specify a new namespace or prefix if the lexical value of the specified
 name contains a colon.</p>
 
@@ -1997,8 +1997,8 @@ option.</p>
 <p>The <code class="option">group-adjacent</code> option can be used to group
 adjacent documents.
 The
-<span class="xspecref"><a href="../xproc20/#xpath-context">XPath
-context</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span> for the
+<span class="xspecref"><a href="../xproc20#xpath-context">XPath
+context</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span> for the
 <code class="option">group-adjacent</code> option changes over time. For each document that
 appears on the <code class="code">source</code> port, the expression is evaluated
 with that document as the context document. The context position
@@ -2057,8 +2057,8 @@ option <span class="rfc2119" id="c.xslt.5.2">must</span> be a <code class="type"
 <p>If present, the value of the <code class="option">output-base-uri</code>
 option <span class="rfc2119" id="c.xslt.6.2">must</span> be an <code class="type">anyURI</code>. If it is
 relative, it is made absolute against the base URI of the element on
-which it is specified (<a href="../xproc20/#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> or <code class="tag-element">p:xslt</code> in the
-case of a <span class="xspecref"><a href="../xproc20/#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span>
+which it is specified (<a href="../xproc20#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> or <code class="tag-element">p:xslt</code> in the
+case of a <span class="xspecref"><a href="../xproc20#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span>
 value).</p>
 
 <p>If the step specifies a <code class="option">version</code>, then that version
@@ -2077,9 +2077,9 @@ to define top-level stylesheet parameters. The primary result document
 of the transformation, if there is one, appears on the
 <code class="port">result</code> port. At most one document can appear on the
 <code class="port">result</code> port. All other result documents appear on the
-<code class="port">secondary</code> port. <a id="impl-13"></a>The order in which result documents
+<code class="port">secondary</code> port. <span id="impl-13">The order in which result documents
 appear on the <code class="port">secondary</code> port is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>. If XSLT 1.0 is
+<em class="glossterm"><a href="../xproc20#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span> If XSLT 1.0 is
 used, an empty sequence of documents <span class="rfc2119" id="c.xslt.8.8">must</span> appear on
 the <code class="port">secondary</code> port.</p>
 
@@ -2099,9 +2099,9 @@ to an XSLT 1.0 step.
 <p>A dynamic error occurs if the XSLT processor signals a fatal
 error. This includes the case where the transformation terminates due
 to a <code class="tag-element">xsl:message</code> instruction with a <code class="tag-attribute">terminate</code> attribute value of
-“<code class="literal">yes</code>”. <a id="impl-14"></a>How XSLT message termination
+“<code class="literal">yes</code>”. <span id="impl-14">How XSLT message termination
 errors are reported to the XProc processor is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 <p>The invocation of the transformation is controlled by the
 <code class="option">initial-mode</code> and <code class="option">template-name</code>
@@ -2116,7 +2116,7 @@ output base URI per the XSLT 2.0 specification, otherwise the base URI
 of the <code class="port">result</code> document is the base URI of the first
 document in the <code class="code">source</code> port's sequence. If the value of
 the <code class="option">output-base-uri</code> option is not absolute, it will
-be resolved using the base URI of its <a href="../xproc20/#p.option">p:option</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup>
+be resolved using the base URI of its <a href="../xproc20#p.option">p:option</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>
 element. An XSLT 1.0 step <span class="rfc2119" id="c.xslt.12.6">should</span> use the value of the
 <code class="option">output-base-uri</code> as the base URI of its output, if the
 option is specified.</p>
@@ -2127,7 +2127,7 @@ option is specified.</p>
 
 <p>The static and initial dynamic contexts of the XSLT processor
 are the contexts defined in
-<span class="xspecref"><a href="../xproc20/#step-xpath-context-20">Section 2.7.2, “Step XPath Context”</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span>
+<span class="xspecref"><a href="../xproc20#step-xpath-context-20">Section 2.7.2, “Step XPath Context”</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span>
 with the following adjustments.</p>
 
 <p>The dynamic context is augmented as follows:</p>
@@ -2200,9 +2200,9 @@ directory is changed to the value of that option before execution
 begins. <a id="err.inline.C0034"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
 error</a></em> (<a href="#err.C0034"><code class="errqname">err:XC0034</code></a>) if the current working directory cannot be changed
 to the value of the <code class="option">cwd</code> option.
-<a id="impl-15"></a>If <code class="option">cwd</code> is not
+<span id="impl-15">If <code class="option">cwd</code> is not
 specified, the current working directory is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 <p>If the <code class="option">path-separator</code> option is specified,
 every occurrence of the character identified as the
@@ -2241,7 +2241,7 @@ contains a space), then you must specify an alternate separator.</p>
   it can be empty. If no document appears on the <code class="port">source</code> port, then the
   command receives nothing on standard input. If a document does arrive on the <code class="port">source</code> port,
   it will
-be passed to the command as its standard input. <a id="err.inline.D0006"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.D0006"><code class="errqname">err:XD0006</code></a>) if
+be passed to the command as its standard input. <a id="err.inline.D0006"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="../xproc20#err.D0006"><code class="errqname">err:XD0006</code></a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>) if
 more than one document appears on the <code class="port">source</code> port of the <code class="tag-element">p:exec</code> step.
   If
 <code class="option">source-is-xml</code> is true, the serialization options are
@@ -2275,13 +2275,13 @@ and <code class="option">wrap-error-lines</code> options, respectively.</p>
 
 <p>If either of the results are XML, they <span class="rfc2119" id="c.exec.22.1">must</span> be
 parsed with namespaces enabled and validation turned off, just like
-<a href="../xproc20/#p.document">p:document</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup>.</p>
+<a href="../xproc20#p.document">p:document</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>.</p>
 
 <p>The <code class="port">exit-status</code> port always returns a single
 <a href="#cv.result"><code class="tag-element">c:result</code></a> element which contains the system exit status that
-the process returned. <a id="impl-16"></a>The specific exit status values returned by
+the process returned. <span id="impl-16">The specific exit status values returned by
 a process invoked with <code class="tag-element">p:exec</code> are
-<em class="glossterm"><a href="../xproc20/#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 <p>If a <code class="option">failure-threshold</code> value is supplied, and the
 exit status is greater than that threshold, then the <code class="tag-element">p:exec</code>
@@ -2290,7 +2290,7 @@ step <span class="rfc2119" id="c.exec.24.3">must</span> fail.
 error</a></em> (<a href="#err.C0064"><code class="errqname">err:XC0064</code></a>) if the exit code from the command is greater than
 the specified <code class="option">failure-threshold</code> value.
 This failure, like any step failure,
-can be captured with a <a href="../xproc20/#p.try">p:try</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup>.</p>
+can be captured with a <a href="../xproc20#p.try">p:try</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>.</p>
 
 </section>
 
@@ -2318,9 +2318,9 @@ it is 1.</p>
 Implementations <span class="rfc2119" id="c.hash.6.2">must</span> support
 [<a href="#bib.crc"><span class="abbrev">CRC32</span></a>],
 [<a href="#rfc1321"><span class="abbrev">MD5</span></a>], and [<a href="#bib.sha"><span class="abbrev">SHA1</span></a>]
-hashes. <a id="impl-17"></a>It is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em> what other algorithms are
-supported.
+hashes. <span id="impl-17">It is
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em> what other algorithms are
+supported.</span>
 The resulting hash <span class="rfc2119" id="c.hash.6.7">should</span> be returned as a string of
 hexadecimal characters.
 </p>
@@ -2368,9 +2368,9 @@ in-scope variables and options as a set of parameters in a
 The resulting <a href="#cv.param"><code class="tag-element">c:param</code></a> elements are wrapped in a 
 <a href="#cv.param-set"><code class="tag-element">c:param-set</code></a> and the parameter set document is written
 to the <code class="port">result</code> port.
-<a id="impl-18"></a>The
+<span id="impl-18">The
 order in which <a href="#cv.param"><code class="tag-element">c:param</code></a> elements occur in the <a href="#cv.param-set"><code class="tag-element">c:param-set</code></a> is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 <p>For consistency and user convenience, if any of the variables or options
 have names that are in a namespace, the
@@ -2518,7 +2518,7 @@ the end of the unit of content and it is not in <em>regular-mode</em>.
 <a id="err.inline.C0068"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic error</a></em> (<a href="#err.C0068"><code class="errqname">err:XC0068</code></a>)
 if more than one document appears on the <code class="port">source</code> port.
 In an XPath 1.0 implementation, if
-<a href="../xproc20/#p.empty">p:empty</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> is given or implied on the <code class="port">source</code> port, an
+<a href="../xproc20#p.empty">p:empty</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> is given or implied on the <code class="port">source</code> port, an
 empty document node is used as
 the context node. In an XPath 2.0 implementation, the context item is
 undefined.
@@ -2678,15 +2678,15 @@ must be an integer.</p>
 <p>If the <code class="option">version</code> is specified, that version of
 UUID must be computed. <a id="err.inline.C0060"></a>It is a <em class="glossterm"><a href="#dt-dynamic-error">dynamic
 error</a></em> (<a href="#err.C0060"><code class="errqname">err:XC0060</code></a>) if the processor does not support the specified
-<code class="option">version</code> of the UUID algorithm. <a id="impl-19"></a>If the
+<code class="option">version</code> of the UUID algorithm. <span id="impl-19">If the
 <code class="option">version</code> is not specified, the version of UUID
 computed is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 <p>Implementations <span class="rfc2119" id="c.uuid.6.1">must</span> support version 4 UUIDs.
-<a id="impl-20"></a>Support for other versions of UUID, and the mechanism by which
+<span id="impl-20">Support for other versions of UUID, and the mechanism by which
 the necessary inputs are made available for computing other versions,
-is <em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
+is <em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span>
 </p>
 
 <p>The matched nodes are specified with the match pattern in the
@@ -2746,8 +2746,8 @@ augmented by application of the
 [<a href="#relaxng-dtd-compat"><span class="abbrev">RELAX NG DTD Compatibility</span></a>]. The output of this step
 <span class="rfc2119" id="c.validate-with-relax-ng.9.2">may</span> include PSVI annotations.</p>
 
-<p><a id="impl-21"></a>Support for [<a href="#relaxng-dtd-compat"><span class="abbrev">RELAX NG DTD Compatibility</span></a>] is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<p><span id="impl-21">Support for [<a href="#relaxng-dtd-compat"><span class="abbrev">RELAX NG DTD Compatibility</span></a>] is
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 </section>
 
@@ -2816,11 +2816,11 @@ namespaces covered by the documents available on the schemas port.</p>
 
 <p>If <code class="code">xs:include</code> elements occur within the supplied
 schema documents, they are treated like any other
-<span class="xspecref"><a href="../xproc20/#external-docs">external
-documents</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span>. <a id="impl-22"></a>It is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em> if the documents supplied
+<span class="xspecref"><a href="../xproc20#external-docs">external
+documents</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span>. <span id="impl-22">It is
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em> if the documents supplied
 on the <code class="port">schemas</code> port are considered when resolving
-<code class="code">xs:include</code> elements in the schema documents provided.
+<code class="code">xs:include</code> elements in the schema documents provided.</span>
 </p>
 
 <p>The <code class="option">use-location-hints</code> and
@@ -2944,8 +2944,8 @@ When parameters are encoded into name/value pairs,
 The namespace name is ignored and no prefix or colon appears in the name.
 </p>
 
-<p><a id="impl-23"></a>The order of the parameters is
-is <em class="glossterm"><a href="../xproc20/#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<p><span id="impl-23">The order of the parameters is
+is <em class="glossterm"><a href="../xproc20#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 <p>The matched nodes are specified with the match pattern in the
 <code class="option">match</code> option. For each matching node, the encoded
@@ -2994,8 +2994,8 @@ descendants of this element are considered the query.</p>
 <p id="d1725e8" class="element-syntax element-syntax-step-vocabulary"><code>&lt;c:query&gt;<br />    <var>string</var><br />&lt;/c:query&gt;</code></p>
 </li><li>
 <p>If the document root element is in the XQueryX namespace, the
-document is treated as an XQueryX-encoded query. <a id="impl-24"></a>Support for
-XQueryX is <em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
+document is treated as an XQueryX-encoded query. <span id="impl-24">Support for
+XQueryX is <em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span>
 </p>
 </li><li>
 <p>If the <code class="port">query</code> document has an XML media type, then
@@ -3003,8 +3003,8 @@ the string value of the document <span class="rfc2119" id="c.xquery.6.3.1.2">mus
 the query. If the media type has a “<code class="literal">text</code>” type,
 then it <span class="rfc2119" id="c.xquery.6.3.1.4">must</span> be interpreted as the query.</p>
 </li><li>
-<p><a id="impl-25"></a>Otherwise, the interpretation of the query
-is <em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
+<p><span id="impl-25">Otherwise, the interpretation of the query
+is <em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span>
 </p>
 </li></ul></div>
 
@@ -3081,19 +3081,19 @@ processor.
 </dd><dt><span class="term">Function implementations</span></dt><dd>
 <p>The function implementations provided by the XQuery processor.</p>
 </dd><dt><span class="term">Current dateTime</span></dt><dd>
-<p><a id="impl-26"></a>The point in time returned as the current dateTime is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<p><span id="impl-26">The point in time returned as the current dateTime is
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 </dd><dt><span class="term">Implicit timezone</span></dt><dd>
-<p><a id="impl-27"></a>The implicit timezone is <em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
-
+<p><span id="impl-27">The implicit timezone is <em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.
+</span>
 </p>
 </dd><dt><span class="term">Available documents</span></dt><dd>
-<p><a id="impl-28"></a>The set of available documents (those that may be retrieved with a URI)
-is <em class="glossterm"><a href="../xproc20/#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
+<p><span id="impl-28">The set of available documents (those that may be retrieved with a URI)
+is <em class="glossterm"><a href="../xproc20#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span>
 </p>
 </dd><dt><span class="term">Available collections</span></dt><dd>
-<p><a id="impl-29"></a>The set of available collections
-is <em class="glossterm"><a href="../xproc20/#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
+<p><span id="impl-29">The set of available collections
+is <em class="glossterm"><a href="../xproc20#dt-implementation-dependent">implementation-dependent</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span>
 </p>
 </dd><dt><span class="term">Default collection</span></dt><dd>
 <p>The sequence of documents provided on the <code class="port">source</code> port.
@@ -3146,26 +3146,26 @@ port.</p>
 <p>The value of the <code class="option">href</code> option
 <span class="rfc2119" id="c.xsl-formatter.4.2">must</span> be an <code class="type">anyURI</code>. If it is relative,
 it is made absolute against the base URI of the element on which it is
-specified (<a href="../xproc20/#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> or <code class="tag-element">p:xsl-formatter</code> in the
-case of a <span class="xspecref"><a href="../xproc20/#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></span>
+specified (<a href="../xproc20#p.with-option">p:with-option</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> or <code class="tag-element">p:xsl-formatter</code> in the
+case of a <span class="xspecref"><a href="../xproc20#option-shortcut">syntactic shortcut</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></span>
 value).</p>
 
 <p>The content-type of the output is controlled by the
 <code class="option">content-type</code> option. This option specifies a media
 type as defined by [<a href="#media-types"><span class="abbrev">IANA Media Types</span></a>]. The option may
 include media type parameters as well (e.g.
-"application/someformat; charset=UTF-8"). <a id="impl-30"></a>The use of media type
+"application/someformat; charset=UTF-8"). <span id="impl-30">The use of media type
 parameters on the <code class="option">content-type</code> option is
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
-<p><a id="impl-31"></a>If the <code class="option">content-type</code> option is not specified,
-the output type is <em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>. The default <span class="rfc2119" id="c.xsl-formatter.6.2">should</span> be
+<p><span id="impl-31">If the <code class="option">content-type</code> option is not specified,
+the output type is <em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span> The default <span class="rfc2119" id="c.xsl-formatter.6.2">should</span> be
 PDF.</p>
 
-<p><a id="impl-32"></a>A formatter may take any number of optional rendering
+<p><span id="impl-32">A formatter may take any number of optional rendering
 parameters via the step's <code class="option">parameters</code>; such parameters
 are defined by the XSL implementation used and are
-<em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.</p>
+<em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span></p>
 
 <p>The output of this step is a document containing a single
 <a href="#cv.result"><code class="tag-element">c:result</code></a> element whose content is the absolute URI of the
@@ -3229,12 +3229,12 @@ The public identifier of the doctype.</p>
 <code class="type">anyURI</code>. The system identifier of the doctype. It need not
 be absolute, and is not resolved.</p>
 </dd><dt><span class="term"><code class="option">encoding</code></span></dt><dd>
-<p>A character set name. <a id="impl-33"></a>If no <code class="option">encoding</code> is
-specified, the encoding used is <em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation
-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>. If the <code class="option">method</code> is
+<p>A character set name. <span id="impl-33">If no <code class="option">encoding</code> is
+specified, the encoding used is <em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation
+defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>. If the <code class="option">method</code> is
 “<code class="literal">xml</code>” or “<code class="literal">xhtml</code>”, the
 implementation defined encoding <span class="rfc2119" id="serialization-options.4.5.2.1.1.6">must</span> be either
-UTF-8 or UTF-16.</p>
+UTF-8 or UTF-16.</span></p>
 </dd><dt><span class="term"><code class="option">escape-uri-attributes</code></span></dt><dd>
 <p>The value of this option <span class="rfc2119" id="serialization-options.4.6.2.1.1">must</span> be a
 boolean. It is ignored unless the specified method is
@@ -3258,10 +3258,10 @@ default varies according to the <code class="option">method</code>:</p>
 
 <dl><dt><span class="term"><code class="literal">xml</code></span></dt><dd><p><code class="literal">application/xml</code></p></dd><dt><span class="term"><code class="literal">html</code></span></dt><dd><p><code class="literal">text/html</code></p></dd><dt><span class="term"><code class="literal">xhtml</code></span></dt><dd><p><code class="literal">application/xhtml+xml</code></p></dd><dt><span class="term"><code class="literal">text</code></span></dt><dd><p><code class="literal">text/plain</code></p></dd></dl></div>
 
-<p><a id="impl-34"></a>For methods other than <code class="literal">xml</code>, <code class="literal">html</code>,
+<p><span id="impl-34">For methods other than <code class="literal">xml</code>, <code class="literal">html</code>,
 <code class="literal">xhtml</code>, and <code class="literal">text</code>; the
-<code class="option">media-type</code> is <em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
-</p>
+<code class="option">media-type</code> is <em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.
+</span></p>
 </dd><dt><span class="term"><code class="option">method</code></span></dt><dd>
 <p>The value of this option <span class="rfc2119" id="serialization-options.4.10.2.1.1">must</span> be a
 <code class="type">QName</code>. It specifies the serialization method.</p>
@@ -3298,8 +3298,8 @@ method used by this component with standard values of 'html', 'xml',
 supported. The interpretation of the remaining options is as
 specified in [<a href="#xml-serialization"><span class="abbrev">Serialization</span></a>].</p>
 
-<p><a id="impl-35"></a>Implementations may support other method values but their
-results are <em class="glossterm"><a href="../xproc20/#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup></em>.
+<p><span id="impl-35">Implementations may support other method values but their
+results are <em class="glossterm"><a href="../xproc20#dt-implementation-defined">implementation-defined</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup></em>.</span>
 </p>
 
 <p>A minimally conforming implementation must support the
@@ -3336,7 +3336,7 @@ specification.</p>
           be detected before pipeline evaluation is even attempted.]</span> Examples of static
         errors include cycles and incorrect specification of inputs and outputs. </p>
       <p>Static errors are fatal and must be detected before any steps are evaluated.</p>
-      <p>For a complete list of static errors, see <a href="../xproc20/#app.static-errors">Section 1, “Static Errors”</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup>.</p>
+      <p>For a complete list of static errors, see <a href="../xproc20#app.static-errors">Section 1, “Static Errors”</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>.</p>
     </section>
     <section id="dynamic-errors" class="section"><h3>2.2 Dynamic Errors</h3>
       
@@ -3345,9 +3345,9 @@ specification.</p>
         references to URIs that cannot be resolved, steps which fail, and pipelines that exhaust the
         capacity of an implementation (such as memory or disk space).</p>
       <p>If a step fails due to a dynamic error, failure propagates upwards until either a
-          <a href="../xproc20/#p.try">p:try</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup> is encountered or the entire pipeline fails. In other words, outside of a
-          <a href="../xproc20/#p.try">p:try</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup>, step failure causes the entire pipeline to fail.</p>
-      <p>For a complete list of dynamic errors, see <a href="../xproc20/#app.dynamic-errors">Section 2, “Dynamic Errors”</a><sup class="xrefspec"><a href="../xproc20/">XP</a></sup>.</p>
+          <a href="../xproc20#p.try">p:try</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup> is encountered or the entire pipeline fails. In other words, outside of a
+          <a href="../xproc20#p.try">p:try</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>, step failure causes the entire pipeline to fail.</p>
+      <p>For a complete list of dynamic errors, see <a href="../xproc20#app.dynamic-errors">Section 2, “Dynamic Errors”</a><sup class="xrefspec"><a href="../xproc20">XP</a></sup>.</p>
     </section>
     <section id="step-errors" class="section"><h3>2.3 Step Errors</h3>
       
@@ -3362,129 +3362,129 @@ specification.</p>
 <p>The following <em class="glossterm"><a href="#dt-dynamic-error">dynamic errors</a></em>
 can be raised by steps in this specification:</p>
 
-<div id="step-error-summary"><h5>Step Errors</h5><dl class="errs"><dt><a id="err.C0002"></a><code class="errqname">err:XC0002</code></dt><dd><p>It is a dynamic error if the value
-starts with the string “--”.</p><p>See: <a href="#err.inline.C0002">Request Entity body conversion</a></p></dd><dt><a id="err.C0003"></a><code class="errqname">err:XC0003</code></dt><dd><p>It
+<div id="step-error-summary"><h5>Step Errors</h5><dl class="errs"><dt id="err.C0002"><code class="errqname">err:XC0002</code></dt><dd><p>It is a dynamic error if the value
+starts with the string “--”.</p><p>See: <a href="#err.inline.C0002">Request Entity body conversion</a></p></dd><dt id="err.C0003"><code class="errqname">err:XC0003</code></dt><dd><p>It
 is a dynamic error if a username
 or password is specified without specifying an
 auth-method, if
 the requested
 auth-method isn't supported, or the authentication
 challenge contains an authentication method that isn't
-supported.</p><p>See: <a href="#err.inline.C0003">Specifying a request</a></p></dd><dt><a id="err.C0004"></a><code class="errqname">err:XC0004</code></dt><dd><p>It is a dynamic error if the
+supported.</p><p>See: <a href="#err.inline.C0003">Specifying a request</a></p></dd><dt id="err.C0004"><code class="errqname">err:XC0004</code></dt><dd><p>It is a dynamic error if the
 status-only attribute has the value true and
-the detailed attribute does not have the value true.</p><p>See: <a href="#err.inline.C0004">Specifying a request</a></p></dd><dt><a id="err.C0005"></a><code class="errqname">err:XC0005</code></dt><dd><p>It is a dynamic error if the
+the detailed attribute does not have the value true.</p><p>See: <a href="#err.inline.C0004">Specifying a request</a></p></dd><dt id="err.C0005"><code class="errqname">err:XC0005</code></dt><dd><p>It is a dynamic error if the
 request contains a c:body or c:multipart but the
-method does not allow for an entity body being sent with the request.</p><p>See: <a href="#err.inline.C0005">Specifying a request</a></p></dd><dt><a id="err.C0006"></a><code class="errqname">err:XC0006</code></dt><dd><p>It is a dynamic error if the
+method does not allow for an entity body being sent with the request.</p><p>See: <a href="#err.inline.C0005">Specifying a request</a></p></dd><dt id="err.C0006"><code class="errqname">err:XC0006</code></dt><dd><p>It is a dynamic error if the
 method is not specified on a c:request.
-</p><p>See: <a href="#err.inline.C0006">Specifying a request</a></p></dd><dt><a id="err.C0010"></a><code class="errqname">err:XC0010</code></dt><dd><p>It is a dynamic error
+</p><p>See: <a href="#err.inline.C0006">Specifying a request</a></p></dd><dt id="err.C0010"><code class="errqname">err:XC0010</code></dt><dd><p>It is a dynamic error
 if an encoding of base64 is specified and
 the character set is not specified or if the specified
-character set is not supported by the implementation.</p><p>See: <a href="#err.inline.C0010">p:unescape-markup</a></p></dd><dt><a id="err.C0012"></a><code class="errqname">err:XC0012</code></dt><dd><p>It is a
+character set is not supported by the implementation.</p><p>See: <a href="#err.inline.C0010">p:unescape-markup</a></p></dd><dt id="err.C0012"><code class="errqname">err:XC0012</code></dt><dd><p>It is a
 dynamic error if the contents of the directory
 path are not available to the step due to access restrictions in the
-environment in which the pipeline is run.</p><p>See: <a href="#err.inline.C0012">p:directory-list</a></p></dd><dt><a id="err.C0013"></a><code class="errqname">err:XC0013</code></dt><dd><p>It
+environment in which the pipeline is run.</p><p>See: <a href="#err.inline.C0012">p:directory-list</a></p></dd><dt id="err.C0013"><code class="errqname">err:XC0013</code></dt><dd><p>It
 is a dynamic error if the pattern matches
-a processing instruction and the new name has a non-null namespace.</p><p>See: <a href="#err.inline.C0013">p:rename</a></p></dd><dt><a id="err.C0014"></a><code class="errqname">err:XC0014</code></dt><dd><p>It is a dynamic error
+a processing instruction and the new name has a non-null namespace.</p><p>See: <a href="#err.inline.C0013">p:rename</a></p></dd><dt id="err.C0014"><code class="errqname">err:XC0014</code></dt><dd><p>It is a dynamic error
 if the XML namespace (http://www.w3.org/XML/1998/namespace)
 or the XMLNS namespace (http://www.w3.org/2000/xmlns/) is
 the value of either the from option or the
-to option.</p><p>See: <a href="#err.inline.C0014">p:namespace-rename</a></p></dd><dt><a id="err.C0017"></a><code class="errqname">err:XC0017</code></dt><dd><p>It is a
+to option.</p><p>See: <a href="#err.inline.C0014">p:namespace-rename</a></p></dd><dt id="err.C0017"><code class="errqname">err:XC0017</code></dt><dd><p>It is a
 dynamic error if the absolute path does not
-identify a directory.</p><p>See: <a href="#err.inline.C0017">p:directory-list</a></p></dd><dt><a id="err.C0019"></a><code class="errqname">err:XC0019</code></dt><dd><p>It is a
+identify a directory.</p><p>See: <a href="#err.inline.C0017">p:directory-list</a></p></dd><dt id="err.C0019"><code class="errqname">err:XC0019</code></dt><dd><p>It is a
 dynamic error if the documents are not equal, and the value
 of the fail-if-not-equal option is
-true.</p><p>See: <a href="#err.inline.C0019">p:compare</a></p></dd><dt><a id="err.C0020"></a><code class="errqname">err:XC0020</code></dt><dd><p>It is a
+true.</p><p>See: <a href="#err.inline.C0019">p:compare</a></p></dd><dt id="err.C0020"><code class="errqname">err:XC0020</code></dt><dd><p>It is a
 dynamic error if the the user specifies a value
 or values that are inconsistent with each other or with the requirements
-of the step or protocol.</p><p>See: <a href="#err.inline.C0020">Specifying a request</a></p></dd><dt><a id="err.C0022"></a><code class="errqname">err:XC0022</code></dt><dd><p>it is a dynamic error if
+of the step or protocol.</p><p>See: <a href="#err.inline.C0020">Specifying a request</a></p></dd><dt id="err.C0022"><code class="errqname">err:XC0022</code></dt><dd><p>it is a dynamic error if
 the content of the c:body element does not consist of
 exactly one element, optionally preceded and/or followed by any number
-of processing instructions, comments or whitespace characters</p><p>See: <a href="#err.inline.C0022">Request Entity body conversion</a></p></dd><dt><a id="err.C0023"></a><code class="errqname">err:XC0023</code></dt><dd><p>It
+of processing instructions, comments or whitespace characters</p><p>See: <a href="#err.inline.C0022">Request Entity body conversion</a></p></dd><dt id="err.C0023"><code class="errqname">err:XC0023</code></dt><dd><p>It
 is a dynamic error if the match pattern does
-not match an element.</p><p>See: <a href="#err.inline.C0023">p:add-attribute</a>, <a href="#err.inline.C0023.1">p:insert</a>, <a href="#err.inline.C0023.2">p:label-elements</a>, <a href="#err.inline.C0023.3">p:make-absolute-uris</a>, <a href="#err.inline.C0023.4">p:rename</a>, <a href="#err.inline.C0023.5">p:replace</a>, <a href="#err.inline.C0023.6">p:set-attributes</a>, <a href="#err.inline.C0023.7">p:unwrap</a>, <a href="#err.inline.C0023.8">p:wrap</a></p></dd><dt><a id="err.C0025"></a><code class="errqname">err:XC0025</code></dt><dd><p>It is a dynamic error
+not match an element.</p><p>See: <a href="#err.inline.C0023">p:add-attribute</a>, <a href="#err.inline.C0023.1">p:insert</a>, <a href="#err.inline.C0023.2">p:label-elements</a>, <a href="#err.inline.C0023.3">p:make-absolute-uris</a>, <a href="#err.inline.C0023.4">p:rename</a>, <a href="#err.inline.C0023.5">p:replace</a>, <a href="#err.inline.C0023.6">p:set-attributes</a>, <a href="#err.inline.C0023.7">p:unwrap</a>, <a href="#err.inline.C0023.8">p:wrap</a></p></dd><dt id="err.C0025"><code class="errqname">err:XC0025</code></dt><dd><p>It is a dynamic error
 if the match pattern matches anything other than an element node and
 the value of the position option is
 “first-child” or
-“last-child”.</p><p>See: <a href="#err.inline.C0025">p:insert</a></p></dd><dt><a id="err.C0026"></a><code class="errqname">err:XC0026</code></dt><dd><p>It is a dynamic error if
+“last-child”.</p><p>See: <a href="#err.inline.C0025">p:insert</a></p></dd><dt id="err.C0026"><code class="errqname">err:XC0026</code></dt><dd><p>It is a dynamic error if
 any XPath expression makes reference to the context node, size, or
-position when the context item is undefined.</p><p>See: <a href="#err.inline.C0026">p:template</a></p></dd><dt><a id="err.C0027"></a><code class="errqname">err:XC0027</code></dt><dd><p>It is a dynamic error if the
+position when the context item is undefined.</p><p>See: <a href="#err.inline.C0026">p:template</a></p></dd><dt id="err.C0027"><code class="errqname">err:XC0027</code></dt><dd><p>It is a dynamic error if the
 document is not valid or the step doesn't support DTD
-validation.</p><p>See: <a href="#err.inline.C0027">p:load</a></p></dd><dt><a id="err.C0028"></a><code class="errqname">err:XC0028</code></dt><dd><p>it is a
+validation.</p><p>See: <a href="#err.inline.C0027">p:load</a></p></dd><dt id="err.C0028"><code class="errqname">err:XC0028</code></dt><dd><p>it is a
 dynamic error if the content of the
 c:body element does not consist entirely of
-characters</p><p>See: <a href="#err.inline.C0028">Request Entity body conversion</a></p></dd><dt><a id="err.C0029"></a><code class="errqname">err:XC0029</code></dt><dd><p>It is a dynamic error
-if an XInclude error occurs during processing.</p><p>See: <a href="#err.inline.C0029">p:xinclude</a></p></dd><dt><a id="err.C0030"></a><code class="errqname">err:XC0030</code></dt><dd><p>It is a dynamic error if the
+characters</p><p>See: <a href="#err.inline.C0028">Request Entity body conversion</a></p></dd><dt id="err.C0029"><code class="errqname">err:XC0029</code></dt><dd><p>It is a dynamic error
+if an XInclude error occurs during processing.</p><p>See: <a href="#err.inline.C0029">p:xinclude</a></p></dd><dt id="err.C0030"><code class="errqname">err:XC0030</code></dt><dd><p>It is a dynamic error if the
 override-content-type value cannot be used (e.g.
 text/plain to override
-image/png).</p><p>See: <a href="#err.inline.C0030">Managing the response</a></p></dd><dt><a id="err.C0033"></a><code class="errqname">err:XC0033</code></dt><dd><p>It is a dynamic
-error if the command cannot be run.</p><p>See: <a href="#err.inline.C0033">p:exec</a></p></dd><dt><a id="err.C0034"></a><code class="errqname">err:XC0034</code></dt><dd><p>It is a dynamic
+image/png).</p><p>See: <a href="#err.inline.C0030">Managing the response</a></p></dd><dt id="err.C0033"><code class="errqname">err:XC0033</code></dt><dd><p>It is a dynamic
+error if the command cannot be run.</p><p>See: <a href="#err.inline.C0033">p:exec</a></p></dd><dt id="err.C0034"><code class="errqname">err:XC0034</code></dt><dd><p>It is a dynamic
 error if the current working directory cannot be changed
-to the value of the cwd option.</p><p>See: <a href="#err.inline.C0034">p:exec</a></p></dd><dt><a id="err.C0035"></a><code class="errqname">err:XC0035</code></dt><dd><p>It is a dynamic
+to the value of the cwd option.</p><p>See: <a href="#err.inline.C0034">p:exec</a></p></dd><dt id="err.C0035"><code class="errqname">err:XC0035</code></dt><dd><p>It is a dynamic
 error to specify both result-is-xml and
-wrap-result-lines.</p><p>See: <a href="#err.inline.C0035">p:exec</a></p></dd><dt><a id="err.C0036"></a><code class="errqname">err:XC0036</code></dt><dd><p>It is a
+wrap-result-lines.</p><p>See: <a href="#err.inline.C0035">p:exec</a></p></dd><dt id="err.C0036"><code class="errqname">err:XC0036</code></dt><dd><p>It is a
 dynamic error if the requested hash algorithm is not
 one that the processor understands or if the value or parameters are
-not appropriate for that algorithm.</p><p>See: <a href="#err.inline.C0036">p:hash</a></p></dd><dt><a id="err.C0037"></a><code class="errqname">err:XC0037</code></dt><dd><p>It is a
+not appropriate for that algorithm.</p><p>See: <a href="#err.inline.C0036">p:hash</a></p></dd><dt id="err.C0037"><code class="errqname">err:XC0037</code></dt><dd><p>It is a
 dynamic error if the value provided
 is not a properly
-x-www-form-urlencoded value.</p><p>See: <a href="#err.inline.C0037">p:www-form-urldecode</a></p></dd><dt><a id="err.C0038"></a><code class="errqname">err:XC0038</code></dt><dd><p>It is a
+x-www-form-urlencoded value.</p><p>See: <a href="#err.inline.C0037">p:www-form-urldecode</a></p></dd><dt id="err.C0038"><code class="errqname">err:XC0038</code></dt><dd><p>It is a
 dynamic error if the specified version
-is not available.</p><p>See: <a href="#err.inline.C0038">p:xslt</a>, <a href="#err.inline.C0038.1">p:validate-with-xml-schema</a>, <a href="#err.inline.C0038.2">p:xquery</a></p></dd><dt><a id="err.C0039"></a><code class="errqname">err:XC0039</code></dt><dd><p>It is a
+is not available.</p><p>See: <a href="#err.inline.C0038">p:xslt</a>, <a href="#err.inline.C0038.1">p:validate-with-xml-schema</a>, <a href="#err.inline.C0038.2">p:xquery</a></p></dd><dt id="err.C0039"><code class="errqname">err:XC0039</code></dt><dd><p>It is a
 dynamic error if a sequence of documents (including
 an empty sequence) is provided
-to an XSLT 1.0 step.</p><p>See: <a href="#err.inline.C0039">p:xslt</a></p></dd><dt><a id="err.C0040"></a><code class="errqname">err:XC0040</code></dt><dd><p>It is a dynamic error
+to an XSLT 1.0 step.</p><p>See: <a href="#err.inline.C0039">p:xslt</a></p></dd><dt id="err.C0040"><code class="errqname">err:XC0040</code></dt><dd><p>It is a dynamic error
 if the document element of the document that arrives on the
-source port is not c:request.</p><p>See: <a href="#err.inline.C0040">p:http-request</a></p></dd><dt><a id="err.C0050"></a><code class="errqname">err:XC0050</code></dt><dd><p>It is a dynamic error
+source port is not c:request.</p><p>See: <a href="#err.inline.C0040">p:http-request</a></p></dd><dt id="err.C0050"><code class="errqname">err:XC0050</code></dt><dd><p>It is a dynamic error
 if the URI scheme is not supported or the step cannot store to the
-specified location.</p><p>See: <a href="#err.inline.C0050">p:store</a></p></dd><dt><a id="err.C0051"></a><code class="errqname">err:XC0051</code></dt><dd><p>It is a dynamic
+specified location.</p><p>See: <a href="#err.inline.C0050">p:store</a></p></dd><dt id="err.C0051"><code class="errqname">err:XC0051</code></dt><dd><p>It is a dynamic
 error if the content-type specified is not supported by
-the implementation.</p><p>See: <a href="#err.inline.C0051">p:unescape-markup</a></p></dd><dt><a id="err.C0052"></a><code class="errqname">err:XC0052</code></dt><dd><p>It is a dynamic
+the implementation.</p><p>See: <a href="#err.inline.C0051">p:unescape-markup</a></p></dd><dt id="err.C0052"><code class="errqname">err:XC0052</code></dt><dd><p>It is a dynamic
 error if the encoding specified is not supported by the
-implementation.</p><p>See: <a href="#err.inline.C0052">Request Entity body conversion</a>, <a href="#err.inline.C0052.1">p:unescape-markup</a></p></dd><dt><a id="err.C0053"></a><code class="errqname">err:XC0053</code></dt><dd><p>It is a dynamic error
+implementation.</p><p>See: <a href="#err.inline.C0052">Request Entity body conversion</a>, <a href="#err.inline.C0052.1">p:unescape-markup</a></p></dd><dt id="err.C0053"><code class="errqname">err:XC0053</code></dt><dd><p>It is a dynamic error
 if the assert-valid option is true
-and the input document is not valid.</p><p>See: <a href="#err.inline.C0053">p:validate-with-relax-ng</a>, <a href="#err.inline.C0053.1">p:validate-with-xml-schema</a></p></dd><dt><a id="err.C0054"></a><code class="errqname">err:XC0054</code></dt><dd><p>It is a dynamic error
+and the input document is not valid.</p><p>See: <a href="#err.inline.C0053">p:validate-with-relax-ng</a>, <a href="#err.inline.C0053.1">p:validate-with-xml-schema</a></p></dd><dt id="err.C0054"><code class="errqname">err:XC0054</code></dt><dd><p>It is a dynamic error
 if the assert-valid option is true
-and any Schematron assertions fail.</p><p>See: <a href="#err.inline.C0054">p:validate-with-schematron</a></p></dd><dt><a id="err.C0055"></a><code class="errqname">err:XC0055</code></dt><dd><p>It is a dynamic error
-if the implementation does not support the specified mode.</p><p>See: <a href="#err.inline.C0055">p:validate-with-xml-schema</a></p></dd><dt><a id="err.C0056"></a><code class="errqname">err:XC0056</code></dt><dd><p>It is a
+and any Schematron assertions fail.</p><p>See: <a href="#err.inline.C0054">p:validate-with-schematron</a></p></dd><dt id="err.C0055"><code class="errqname">err:XC0055</code></dt><dd><p>It is a dynamic error
+if the implementation does not support the specified mode.</p><p>See: <a href="#err.inline.C0055">p:validate-with-xml-schema</a></p></dd><dt id="err.C0056"><code class="errqname">err:XC0056</code></dt><dd><p>It is a
 dynamic error if the specified initial mode
-or named template cannot be applied to the specified stylesheet.</p><p>See: <a href="#err.inline.C0056">p:xslt</a></p></dd><dt><a id="err.C0057"></a><code class="errqname">err:XC0057</code></dt><dd><p>It is a dynamic
+or named template cannot be applied to the specified stylesheet.</p><p>See: <a href="#err.inline.C0056">p:xslt</a></p></dd><dt id="err.C0057"><code class="errqname">err:XC0057</code></dt><dd><p>It is a dynamic
 error if the sequence that results from evaluating the XQuery contains
-items other than documents and elements.</p><p>See: <a href="#err.inline.C0057">p:xquery</a></p></dd><dt><a id="err.C0058"></a><code class="errqname">err:XC0058</code></dt><dd><p>It is a dynamic error
+items other than documents and elements.</p><p>See: <a href="#err.inline.C0057">p:xquery</a></p></dd><dt id="err.C0058"><code class="errqname">err:XC0058</code></dt><dd><p>It is a dynamic error
 if the all and relative options are
-both true.</p><p>See: <a href="#err.inline.C0058">p:add-xml-base</a></p></dd><dt><a id="err.C0059"></a><code class="errqname">err:XC0059</code></dt><dd><p>It is a dynamic error if the QName
+both true.</p><p>See: <a href="#err.inline.C0058">p:add-xml-base</a></p></dd><dt id="err.C0059"><code class="errqname">err:XC0059</code></dt><dd><p>It is a dynamic error if the QName
 value in the attribute-name option uses the prefix
 “xmlns”
 or any other prefix that resolves to the namespace name
 http://www.w3.org/2000/xmlns/.
-</p><p>See: <a href="#err.inline.C0059">p:add-attribute</a></p></dd><dt><a id="err.C0060"></a><code class="errqname">err:XC0060</code></dt><dd><p>It is a dynamic
+</p><p>See: <a href="#err.inline.C0059">p:add-attribute</a></p></dd><dt id="err.C0060"><code class="errqname">err:XC0060</code></dt><dd><p>It is a dynamic
 error if the processor does not support the specified
-version of the UUID algorithm.</p><p>See: <a href="#err.inline.C0060">p:uuid</a></p></dd><dt><a id="err.C0061"></a><code class="errqname">err:XC0061</code></dt><dd><p>It is a
+version of the UUID algorithm.</p><p>See: <a href="#err.inline.C0060">p:uuid</a></p></dd><dt id="err.C0061"><code class="errqname">err:XC0061</code></dt><dd><p>It is a
 dynamic error if the name of any encoded parameter
-name is not a valid xs:NCName.</p><p>See: <a href="#err.inline.C0061">p:www-form-urldecode</a></p></dd><dt><a id="err.C0062"></a><code class="errqname">err:XC0062</code></dt><dd><p>It is a dynamic error if the
-match option matches a namespace node.</p><p>See: <a href="#err.inline.C0062">p:delete</a></p></dd><dt><a id="err.C0063"></a><code class="errqname">err:XC0063</code></dt><dd><p>It is a dynamic
+name is not a valid xs:NCName.</p><p>See: <a href="#err.inline.C0061">p:www-form-urldecode</a></p></dd><dt id="err.C0062"><code class="errqname">err:XC0062</code></dt><dd><p>It is a dynamic error if the
+match option matches a namespace node.</p><p>See: <a href="#err.inline.C0062">p:delete</a></p></dd><dt id="err.C0063"><code class="errqname">err:XC0063</code></dt><dd><p>It is a dynamic
 error if the path-separator option is
-specified and is not exactly one character long.</p><p>See: <a href="#err.inline.C0063">p:exec</a></p></dd><dt><a id="err.C0064"></a><code class="errqname">err:XC0064</code></dt><dd><p>It is a dynamic
+specified and is not exactly one character long.</p><p>See: <a href="#err.inline.C0063">p:exec</a></p></dd><dt id="err.C0064"><code class="errqname">err:XC0064</code></dt><dd><p>It is a dynamic
 error if the exit code from the command is greater than
-the specified failure-threshold value.</p><p>See: <a href="#err.inline.C0064">p:exec</a></p></dd><dt><a id="err.C0066"></a><code class="errqname">err:XC0066</code></dt><dd><p>It is a dynamic error if
+the specified failure-threshold value.</p><p>See: <a href="#err.inline.C0064">p:exec</a></p></dd><dt id="err.C0066"><code class="errqname">err:XC0066</code></dt><dd><p>It is a dynamic error if
 the arg-separator option is specified and is not
-exactly one character long.</p><p>See: <a href="#err.inline.C0066">p:exec</a></p></dd><dt><a id="err.C0067"></a><code class="errqname">err:XC0067</code></dt><dd><p>It is a dynamic error to
+exactly one character long.</p><p>See: <a href="#err.inline.C0066">p:exec</a></p></dd><dt id="err.C0067"><code class="errqname">err:XC0067</code></dt><dd><p>It is a dynamic error to
 encounter a single closing curly brace “}” that is not immediately
-followed by another closing curly brace.</p><p>See: <a href="#err.inline.C0067">p:template</a>, <a href="#err.inline.C0067.1">p:template</a>, <a href="#err.inline.C0067.2">p:template</a></p></dd><dt><a id="err.C0068"></a><code class="errqname">err:XC0068</code></dt><dd><p>It is a dynamic error
-if more than one document appears on the source port.</p><p>See: <a href="#err.inline.C0068">p:template</a></p></dd><dt><a id="err.C1001"></a><code class="errqname">err:XC1001</code></dt><dd><p>It is a dynamic
+followed by another closing curly brace.</p><p>See: <a href="#err.inline.C0067">p:template</a>, <a href="#err.inline.C0067.1">p:template</a>, <a href="#err.inline.C0067.2">p:template</a></p></dd><dt id="err.C0068"><code class="errqname">err:XC0068</code></dt><dd><p>It is a dynamic error
+if more than one document appears on the source port.</p><p>See: <a href="#err.inline.C0068">p:template</a></p></dd><dt id="err.C1001"><code class="errqname">err:XC1001</code></dt><dd><p>It is a dynamic
 error if the properties map contains
-a key equal to the string “content-type”.</p><p>See: <a href="#err.inline.C1001">p:set-properties</a></p></dd><dt><a id="err.C1002"></a><code class="errqname">err:XC1002</code></dt><dd><p>It is a dynamic
+a key equal to the string “content-type”.</p><p>See: <a href="#err.inline.C1001">p:set-properties</a></p></dd><dt id="err.C1002"><code class="errqname">err:XC1002</code></dt><dd><p>It is a dynamic
 error if the supplied content-type is not
 a valid media type of the form
-“type/subtype+ext”.</p><p>See: <a href="#err.inline.C1002">p:cast-content-type</a></p></dd><dt><a id="err.C1003"></a><code class="errqname">err:XC1003</code></dt><dd><p>It is a dynamic
+“type/subtype+ext”.</p><p>See: <a href="#err.inline.C1002">p:cast-content-type</a></p></dd><dt id="err.C1003"><code class="errqname">err:XC1003</code></dt><dd><p>It is a dynamic
 error if the p:cast-content-type step
-cannot perform the requested cast.</p><p>See: <a href="#err.inline.C1003">p:cast-content-type</a></p></dd><dt><a id="err.C1004"></a><code class="errqname">err:XC1004</code></dt><dd><p>It is a dynamic
+cannot perform the requested cast.</p><p>See: <a href="#err.inline.C1003">p:cast-content-type</a></p></dd><dt id="err.C1004"><code class="errqname">err:XC1004</code></dt><dd><p>It is a dynamic
 error if the c:data contains content is not
-a valid base64 string.</p><p>See: <a href="#err.inline.C1004">p:cast-content-type</a></p></dd><dt><a id="err.C1005"></a><code class="errqname">err:XC1005</code></dt><dd><p>It is a dynamic
+a valid base64 string.</p><p>See: <a href="#err.inline.C1004">p:cast-content-type</a></p></dd><dt id="err.C1005"><code class="errqname">err:XC1005</code></dt><dd><p>It is a dynamic
 error if the c:data element does not have
-a content-type attribute.</p><p>See: <a href="#err.inline.C1005">p:cast-content-type</a></p></dd><dt><a id="err.C1006"></a><code class="errqname">err:XC1006</code></dt><dd><p>It is a dynamic
+a content-type attribute.</p><p>See: <a href="#err.inline.C1005">p:cast-content-type</a></p></dd><dt id="err.C1006"><code class="errqname">err:XC1006</code></dt><dd><p>It is a dynamic
 error if the content-type is supplied and is
 not the same as the content-type specified on
-the c:data element.</p><p>See: <a href="#err.inline.C1006">p:cast-content-type</a></p></dd><dt><a id="err.C1007"></a><code class="errqname">err:XC1007</code></dt><dd><p>In all cases except when the input document
+the c:data element.</p><p>See: <a href="#err.inline.C1006">p:cast-content-type</a></p></dd><dt id="err.C1007"><code class="errqname">err:XC1007</code></dt><dd><p>In all cases except when the input document
 is a c:data element, it is a dynamic
 error if the content-type is not supplied.</p><p>See: <a href="#err.inline.C1007">p:cast-content-type</a></p></dd></dl></div>
 </section>
