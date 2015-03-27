@@ -315,26 +315,30 @@
         <ref name="use-when.attr"/>
       </optional>
       <choice>
-        <interleave>
-          <optional>
-            <choice>
-              <ref name="Empty"/>
-              <oneOrMore>
-                <choice>
-                  <ref name="Document"/>
-                  <ref name="Inline"/>
-                  <ref name="Filter"/>
-                </choice>
-              </oneOrMore>
-            </choice>
-          </optional>
+        <group>
+          <interleave>
+            <optional>
+              <choice>
+                <ref name="Empty"/>
+                <oneOrMore>
+                  <choice>
+                    <ref name="Document"/>
+                    <ref name="Inline"/>
+                  </choice>
+                </oneOrMore>
+              </choice>
+            </optional>
+            <zeroOrMore>
+              <choice>
+                <ref name="Documentation"/>
+                <ref name="PipeInfo"/>
+              </choice>
+            </zeroOrMore>
+          </interleave>
           <zeroOrMore>
-            <choice>
-              <ref name="Documentation"/>
-              <ref name="PipeInfo"/>
-            </choice>
+            <ref name="Filter"/>
           </zeroOrMore>
-        </interleave>
+        </group>
         <ref name="Any"/>
       </choice>
     </element>
@@ -834,27 +838,31 @@
         <ref name="use-when.attr"/>
       </optional>
       <choice>
-        <interleave>
-          <optional>
-            <choice>
-              <ref name="Empty"/>
-              <oneOrMore>
-                <choice>
-                  <ref name="Pipe"/>
-                  <ref name="Document"/>
-                  <ref name="Inline"/>
-                  <ref name="Filter"/>
-                </choice>
-              </oneOrMore>
-            </choice>
-          </optional>
+        <group>
+          <interleave>
+            <optional>
+              <choice>
+                <ref name="Empty"/>
+                <oneOrMore>
+                  <choice>
+                    <ref name="Pipe"/>
+                    <ref name="Document"/>
+                    <ref name="Inline"/>
+                  </choice>
+                </oneOrMore>
+              </choice>
+            </optional>
+            <zeroOrMore>
+              <choice>
+                <ref name="Documentation"/>
+                <ref name="PipeInfo"/>
+              </choice>
+            </zeroOrMore>
+          </interleave>
           <zeroOrMore>
-            <choice>
-              <ref name="Documentation"/>
-              <ref name="PipeInfo"/>
-            </choice>
+            <ref name="Filter"/>
           </zeroOrMore>
-        </interleave>
+        </group>
         <ref name="Any"/>
       </choice>
     </element>

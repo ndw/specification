@@ -174,7 +174,7 @@ InputConnection =
       common.attributes,
       inline.attributes,
       use-when.attr?,
-      (((\Empty|(Document|Inline|Filter)+)? & (Documentation|PipeInfo)*)|Any)
+      ((((\Empty|(Document|Inline)+)? & (Documentation|PipeInfo)*),Filter*)|Any)
    }
 
 [
@@ -439,7 +439,7 @@ IterationSource =
       common.attributes,
       inline.attributes,
       use-when.attr?,
-      (((\Empty|(Pipe|Document|Inline|Filter)+)? & (Documentation|PipeInfo)*)|Any)
+      ((((\Empty|(Pipe|Document|Inline)+)? & (Documentation|PipeInfo)*),Filter*)|Any)
    }
 
 # ============================================================
