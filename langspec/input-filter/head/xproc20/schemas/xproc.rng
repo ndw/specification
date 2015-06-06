@@ -54,6 +54,11 @@
       <ref name="XPathExpression"/>
     </attribute>
   </define>
+  <define name="filter.attr">
+    <attribute name="filter">
+      <ref name="XPathExpression"/>
+    </attribute>
+  </define>
   <define name="xpath-version.attr">
     <attribute name="xpath-version"/>
   </define>
@@ -309,6 +314,9 @@
       <optional>
         <ref name="select.attr"/>
       </optional>
+      <optional>
+        <ref name="filter.attr"/>
+      </optional>
       <ref name="common.attributes"/>
       <ref name="inline.attributes"/>
       <optional>
@@ -353,12 +361,7 @@
   <define name="Filter" sa:class="language-construct">
     <element name="filter">
       <optional>
-        <attribute name="include">
-          <ref name="XPathExpression"/>
-        </attribute>
-      </optional>
-      <optional>
-        <attribute name="exclude">
+        <attribute name="select">
           <ref name="XPathExpression"/>
         </attribute>
       </optional>

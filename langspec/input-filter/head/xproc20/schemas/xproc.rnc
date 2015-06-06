@@ -37,6 +37,7 @@ required.attr = attribute required { xsd:boolean }
 sequence.attr = attribute sequence { xsd:boolean }
 primary.attr = attribute primary { xsd:boolean }
 select.attr = attribute select { XPathExpression }
+filter.attr = attribute filter { XPathExpression }
 xpath-version.attr = attribute xpath-version { text }
 psvi-required.attr = attribute psvi-required { xsd:boolean }
 
@@ -171,6 +172,7 @@ InputConnection =
    element input {
       port.attr,
       select.attr?,
+      filter.attr?,
       common.attributes,
       inline.attributes,
       use-when.attr?,
@@ -189,8 +191,7 @@ Input = InputDeclaration | InputConnection
 ]
 Filter =
    element filter {
-      attribute include { XPathExpression }?,
-      attribute exclude { XPathExpression }?,
+      attribute select { XPathExpression }?,
       use-when.attr?,
       (Documentation|PipeInfo)*
    }

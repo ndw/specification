@@ -3700,6 +3700,10 @@ specified XPath select expression to the document(s) that are read.
 if the <tag class="attribute">select</tag> is used and any input
 document is not an XML document.</error></para>
 
+<para>A <tag class="attribute">filter</tag> expression
+<rfc2119>may</rfc2119> also be provided with a connection.
+It has the same semantics as a child <tag>p:filter</tag> element.</para>
+
 <para>Each selected node is wrapped in a document (unless it is a document)
 and provided to the input port. In other words,</para>
 
@@ -3762,14 +3766,11 @@ see <tag>p:inline</tag>.</para>
 <e:rng-pattern name="Filter"/>
 
 <para>Each <tag>p:filter</tag> that appears in an input connection is used
-to include or exclude documents on that connection. Each
-<tag class="attribute">include</tag> and
-<tag class="attribute">exclude</tag> expression is evaluated with the
-input document as the context node. If the effective boolean value of an
-<tag class="attribute">include</tag> expression is true, the document is
-included, otherwise it is excluded. If the effective boolean value of
-an <tag class="attribute">exclude</tag> expression is true, the document is
-excluded, otherwise it is included.</para>
+to include documents on that connection. Each
+<tag class="attribute">select</tag> expression is evaluated with the
+input document as the context node. If the effective boolean value of the
+expression is true, the document is
+included, otherwise it is excluded.</para>
 
 <para>If multiple <tag>p:filter</tag> elements are present, they are all
 evaluated. A document, once excluded, is never reconsidered.</para>
@@ -3778,7 +3779,7 @@ evaluated. A document, once excluded, is never reconsidered.</para>
 <title>A filter example</title>
 <programlisting language="xml">&lt;p:input port="source"&gt;
   &lt;p:pipe step="someSource" port="result"/&gt;
-  &lt;p:filter include="contains(
+  &lt;p:filter select="contains(
                         map:get(p:document-properties(.),'content-type'),
                         'xml')"/&gt;
 &lt;/p:input&gt;</programlisting>
