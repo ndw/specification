@@ -1779,9 +1779,9 @@ is required between this and the closing delimiter.</para>
 
 <para>
 <error code="S1003">It is a <glossterm>static error</glossterm> if an
-unescaped left curly bracket appears in a fixed part of a value
-template without a matching right curly bracket or if an unescaped
-right curly bracket appears in the fixed part of a value template.</error>
+unescaped left curly bracket appears in a value template without a
+matching right curly bracket or if an unescaped right curly bracket
+appears in the fixed part of a value template.</error>
 </para>
 
 <para>It is a static error if the string contained between matching curly
@@ -3241,7 +3241,7 @@ preceding <tag>p:when</tag> evaluates to true.</para>
   &lt;p:choose&gt;
     &lt;p:when test="/config/output = 'fo'"&gt;
       &lt;p:xslt&gt;
-	&lt;p:with-param name="key" select="$db-key"/&gt;
+	&lt;p:with-option name="parameters" select="map {'key': $db-key }"/&gt;
 	&lt;p:input port="stylesheet"&gt;
 	  &lt;p:document href="fo.xsl"/&gt;
 	&lt;/p:input&gt;
@@ -3249,7 +3249,7 @@ preceding <tag>p:when</tag> evaluates to true.</para>
     &lt;/p:when&gt;
     &lt;p:when test="/config/output = 'svg'"&gt;
       &lt;p:xslt&gt;
-	&lt;p:with-param name="key" select="$db-key"/&gt;
+	&lt;p:with-option name="parameters" select="map {'key': $db-key }"/&gt;
 	&lt;p:input port="stylesheet"&gt;
 	  &lt;p:document href="svg.xsl"/&gt;
 	&lt;/p:input&gt;
@@ -3257,7 +3257,7 @@ preceding <tag>p:when</tag> evaluates to true.</para>
     &lt;/p:when&gt;
     &lt;p:otherwise&gt;
       &lt;p:xslt&gt;
-	&lt;p:with-param name="key" select="$db-key"/&gt;
+	&lt;p:with-option name="parameters" select="map {'key': $db-key }"/&gt;
 	&lt;p:input port="stylesheet"&gt;
 	  &lt;p:document href="html.xsl"/&gt;
 	&lt;/p:input&gt;
