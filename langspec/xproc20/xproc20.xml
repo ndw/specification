@@ -871,14 +871,16 @@ that set.</error>
             </listitem>
           </itemizedlist>
         </listitem>
-        <listitem>
-          <para>The names and values from each <tag>p:variable</tag> present at the beginning of the
-            container are added, in document order, to the <glossterm>in-scope bindings</glossterm>.
-            A new binding replaces an old binding with the same name. See <xref linkend="p.variable"
-            /> for the specification of variable evaluation.</para>
-        </listitem>
       </orderedlist>
-      <para>A step with no parent inherits the <glossterm>empty environment</glossterm>. </para>
+
+<para>A step with no parent inherits the <glossterm>empty
+environment</glossterm>. </para>
+
+<para>Variables and options are lexically scoped. The environment of a step
+also includes the <glossterm>in-scope bindings</glossterm> for all of
+the variables and options “visible” from its lexical position. Variables
+and options can shadow each other, only the lexically most recent bindings
+are visible.</para>
 
          <section xml:id="initial-environment">
             <title>Initial Environment</title>
@@ -1007,13 +1009,19 @@ with the following static context:</para>
             <varlistentry>
               <term>In-scope variables</term>
               <listitem>
-                <para>The union of the in-scope <glossterm>specified options</glossterm> and
-                  variables are available as variable bindings to the XPath processor. </para>
-                <note xml:id="note-no-value">
-                  <para>An option that has neither a specified value nor a default value will not
-                    appear as an in-scope variable. Consequently, an attempt to refer to that
-                    variable will raise an error.</para>
-                </note>
+<para>Variables and options are lexically scoped. The union of the
+<glossterm>specified options</glossterm> and the variables that
+are “visible” from the step's lexical position are available
+as variable bindings to the XPath processor.
+Variables and options can shadow each other, only the lexically most
+recent bindings are visible.</para>
+
+<note xml:id="note-no-value">
+<para>An option that has neither a specified value nor a default value
+will not appear as an in-scope variable. Consequently, an attempt to
+refer to that variable will raise an error.</para>
+</note>
+
               </listitem>
             </varlistentry>
             <varlistentry>
@@ -1849,28 +1857,13 @@ XQuery.</para>
 </section>
 </section>
 
-<section xml:id="variables">
-<title>Variables</title>
-
-<para>Variables are name/value pairs. Pipeline authors can create
-variables to hold computed values.</para>
-
-<para><termdef xml:id="dt-variable">A <firstterm>variable</firstterm>
-is a name/value pair. The name <rfc2119>must</rfc2119> be an <link
-xlink:href="http://www.w3.org/TR/REC-xml-names/#dt-expname">expanded
-name</link>. The value may be any XDM value.</termdef>
-</para>
-
-<para>Variables and options share the same scope and may shadow each
-other.</para>
-</section>
-
 <section xml:id="options">
 <title>Options</title>
 
-<para>Some steps accept options. Options are name/value pairs, like
-variables. Unlike variables, the value of an option can be changed by
-the caller.</para>
+<para>Some steps accept options. Options are name/value pairs. The
+value of an option can be specified as a default on the step, can be
+provided by the caller of the step (overriding any default), or may be
+undefined.</para>
 
 <para><termdef xml:id="dt-option">An <firstterm>option</firstterm>
 is a name/value pair. The name <rfc2119>must</rfc2119> be an <link
@@ -1906,8 +1899,23 @@ whose value is a map item value
 The map item contains the
 mapping of between the names and the values whose interpretation is
 specific to the step.</para>
+</section>
 
-    </section>
+<section xml:id="variables">
+<title>Variables</title>
+
+<para>Variables are name/value pairs. Pipeline authors can create
+variables to hold computed values.</para>
+
+<para><termdef xml:id="dt-variable">A <firstterm>variable</firstterm>
+is a name/value pair. The name <rfc2119>must</rfc2119> be an <link
+xlink:href="http://www.w3.org/TR/REC-xml-names/#dt-expname">expanded
+name</link>. The value may be any XDM value.</termdef>
+</para>
+
+<para>Variables and options may shadow each other.</para>
+</section>
+
     <section xml:id="security-considerations">
       <title>Security Considerations</title>
       <para>An XProc pipeline may attempt to access arbitrary network resources: steps such as
@@ -2248,11 +2256,6 @@ they are declared. When an option is declared with <tag>p:option</tag>
 (or a variable with <tag>p:variable</tag>), unless otherwise
 specified, its scope consists of the sibling elements that follow its
 declaration and the descendants of those siblings.
-<error code="S0004">It is a <glossterm>static error</glossterm> if
-an option or variable declaration duplicates the name of any other
-option or variable in the same <glossterm>environment</glossterm>.</error>
-That is, no option or variable may lexically shadow another option or
-variable with the same name.
 </para>
 </section>
     <section xml:id="xml-base-attribute">
@@ -3771,9 +3774,7 @@ the value of the variable.</para>
 <para>If a <tag class="attribute">select</tag> expression is given, it
 is evaluated as an XPath expression using the appropriate context as
 described in <xref linkend="xpath-context"/>, for the enclosing
-<glossterm>container</glossterm>, with the addition of bindings for
-all preceding-sibling <tag>p:variable</tag> and <tag>p:option</tag>
-elements.</para>
+<glossterm>container</glossterm>.</para>
 
 <para>The type of the value may be specified in the <tag
 class="attribute">as</tag> attribute using an XPath Sequence
@@ -3797,18 +3798,12 @@ the <glossterm>readable ports</glossterm> available for document
 connections are the <glossterm>readable ports</glossterm> in the
 environment inherited by the first step in the surrounding
 <glossterm>container</glossterm>'s <glossterm>contained
-steps</glossterm>. However, in order to avoid ordering paradoxes,
-<error code="S0019">it is a <glossterm>static error</glossterm> for a
-variable's document connection to refer to the output port of any step
-in the surrounding <glossterm>container</glossterm>'s
-<glossterm>contained steps</glossterm></error>.</para>
+steps</glossterm>.</para>
 
 <para>If a <tag class="attribute">select</tag> expression is given but
 no document connection is provided, the implicit connection is to the
-<glossterm>default readable port</glossterm> in the environment
-inherited by the first step in the surrounding
-<glossterm>container</glossterm>'s <glossterm>contained
-steps</glossterm>. If there is no default readable port, the
+<glossterm>default readable port</glossterm> computed as if the variable
+was an atomic step. If there is no default readable port, the
 connection is treated as if <tag>p:empty</tag> was specified.</para>
 
 <para><error code="D0008">It is a <glossterm>dynamic error</glossterm>
@@ -3821,7 +3816,20 @@ the context node, size, or position when the context item is
 undefined.</error>
 </para>
 
-<para>For <tag class="attribute">exclude-inline-prefixes</tag> and <tag class="attribute">expand-text</tag>, see <tag>p:inline</tag> .
+<para>Steps are connected together by their input and output
+ports. Variables are connected to steps by their input, which provides
+the context node for the expression, and by the expressions that contain
+references to them. Any step which contains a reference to a variable
+effectively consumes the “output” of the variable.
+<error code="S1100">It is a <glossterm>static error</glossterm> if
+there are any loops in the connections between steps and variables:
+no step can refer to a variable if there is any sequence of connections
+from that step that leads back to the input that provides the context
+node for the expression that defines the value of the variable.</error>
+</para>
+
+<para>For <tag class="attribute">exclude-inline-prefixes</tag> and
+<tag class="attribute">expand-text</tag>, see <tag>p:inline</tag> .
 </para>
 </section>
 
