@@ -1,5 +1,6 @@
 language: java
 script: make
+sudo: false
 env:
   global:
   - secure: f2Ph6S+P7i5ORWmmuDtqm25trokTWBfcGJcxeHaAdrqn4YLS+Ye/nqOlfAjAJY/y1FRTpovHo/nRjM5wkfQlZ52LhzuTZ2Kj5aRFWU7ljxl07HsG92bmbzTVA8KJ/T7nAey+H6B/x1xC9BRLvCnL1uvJ7HpTyNm0clwhZamqX80=
