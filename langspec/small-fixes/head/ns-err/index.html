@@ -110,11 +110,13 @@ For updated information, please refer to the latest version of the
    <dt><code>err:XS0063</code></dt><dd><p>It is a static error if the value of the version attribute is not a xs:decimal.</p></dd>
    <dt><code>err:XS1001</code></dt><dd><p>It is a static error if the code attribute is missing from any but the last p:catch, if the last p:catch has a code, or if any error code is repeated.</p></dd>
    <dt><code>err:XS1002</code></dt><dd><p>It is a static error if there is no primary input port.</p></dd>
-   <dt><code>err:XS1003</code></dt><dd><p>It is a static error if an unescaped left curly bracket appears in a value template without a matching right curly bracket or if an unescaped right curly bracket appears in the fixed part of a value template.</p></dd>
+   <dt><code>err:XS1003</code></dt><dd><p>It is a static error if an expression does not have a closing right curly bracket or if an unescaped right curly bracket occurs outside of an expression.</p></dd>
    <dt><code>err:XS1004</code></dt><dd><p>It is a static error if the step attribute is not specified, and there is no default readable port. It is a static error if the port attribute is not specified, and the step identified has no primary output port.</p></dd>
    <dt><code>err:XS1005</code></dt><dd><p>It is a static error if the port attribute is not specified, and the step identified has no primary output port.</p></dd>
    <dt><code>err:XS1006</code></dt><dd><p>It is a static error if the encoding specified is not supported by the implementation.</p></dd>
-   <dt><code>err:XS1007</code></dt><dd><p>It is a static error if the content includes any XML markup.</p></dd>
+   <dt><code>err:XS1007</code></dt><dd><p>It is a static error if an encoding is specified and the content type is an XML media type.</p></dd>
+   <dt><code>err:XS1008</code></dt><dd><p>It is a static error if the content type value specifies a character set and the encoding attribute is absent.</p></dd>
+   <dt><code>err:XS1009</code></dt><dd><p>It is a static error if an encoding is specified and the content of the p:inline contains any XML markup.</p></dd>
 </dl>
 </section>
 

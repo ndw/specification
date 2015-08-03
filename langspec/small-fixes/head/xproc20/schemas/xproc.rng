@@ -11,10 +11,10 @@
   <define name="XPathSequenceType" sa:model="XPathSequenceType">
     <text/>
   </define>
-  <define name="MediaType" sa:model="MediaType">
+  <define name="ContentType" sa:model="ContentType">
     <text/>
   </define>
-  <define name="MediaTypes" sa:model="MediaTypes">
+  <define name="ContentTypes" sa:model="ContentTypes">
     <text/>
   </define>
   <define name="name.ncname.attr">
@@ -67,12 +67,12 @@
   </define>
   <define name="content-type.attr">
     <attribute name="content-type">
-      <ref name="MediaType"/>
+      <ref name="ContentType"/>
     </attribute>
   </define>
   <define name="content-types.attr">
     <attribute name="content-types">
-      <ref name="MediaTypes"/>
+      <ref name="ContentTypes"/>
     </attribute>
   </define>
   <define name="exclude-inline-prefixes.attr">
@@ -450,7 +450,7 @@
       <ref name="href.attr"/>
       <optional>
         <attribute name="override-content-type">
-          <ref name="MediaType"/>
+          <ref name="ContentType"/>
         </attribute>
       </optional>
       <ref name="common.attributes"/>
@@ -1293,7 +1293,7 @@
       </optional>
       <optional>
         <attribute name="override-content-type">
-          <ref name="MediaType"/>
+          <ref name="ContentType"/>
         </attribute>
       </optional>
       <group>
