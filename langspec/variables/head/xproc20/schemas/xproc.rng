@@ -240,11 +240,9 @@
     </element>
   </define>
   <define name="Subpipeline" sa:model="subpipeline">
-    <zeroOrMore>
-      <ref name="Variable"/>
-    </zeroOrMore>
     <oneOrMore>
       <choice>
+        <ref name="Variable"/>
         <ref name="ForEach"/>
         <ref name="Viewport"/>
         <ref name="Choose"/>

@@ -144,7 +144,7 @@ Pipeline =
 [
    sa:model = "subpipeline"
 ]
-Subpipeline = Variable*,(ForEach|Viewport|Choose|Group|Try|OtherStep|Documentation|PipeInfo)+
+Subpipeline = (Variable|ForEach|Viewport|Choose|Group|Try|OtherStep|Documentation|PipeInfo)+
 
 # ============================================================
 

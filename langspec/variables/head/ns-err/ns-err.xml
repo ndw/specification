@@ -82,7 +82,7 @@ For updated information, please refer to the latest version of the
    <error code="XS0001">It is a static error if there are any loops in the connections between steps: no step can be connected to itself nor can there be any sequence of connections through other steps that leads back to itself.</error>
    <error code="XS0002">All steps in the same scope must have unique names: it is a static error if two steps with the same name appear in the same scope.</error>
    <error code="XS0003">It is a static error if any declared input is not connected.</error>
-   <error code="XS0004">It is a static error if an option or variable declaration duplicates the name of any other option or variable in the same environment.</error>
+   <error code="XS0004">It is a static error to declare two or more options on the same step with the same name.</error>
    <error code="XS0005">It is a static error if the primary output port of any step is not connected.</error>
    <error code="XS0006">It is a static error if the primary output port has no explicit connection and the last step in the subpipeline does not have a primary output port.</error>
    <error code="XS0007">It is a static error if two subpipelines in a p:choose declare different outputs.</error>
@@ -94,7 +94,6 @@ For updated information, please refer to the latest version of the
    <error code="XS0015">It is a static error if a compound step has no contained steps.</error>
    <error code="XS0017">It is a static error to specify that an option is both requiredand has a default value.</error>
    <error code="XS0018">If an option is required, it is a static error to invoke the step without specifying a value for that option.</error>
-   <error code="XS0019">it is a static error for a variable's document connection to refer to the output port of any step in the surrounding container's contained steps</error>
    <error code="XS0020">It is a static error if the binding attribute on p:namespaces is specified and its value is not the name of an in-scope binding.</error>
    <error code="XS0022">In all cases except the p:output of a compound step, it is a static error if the port identified by a p:pipe is not in the readable ports of the step that contains the p:pipe.</error>
    <error code="XS0024">It is a static error if the content of the p:inline element does not consist of exactly one element, optionally preceded and/or followed by any number of processing instructions, comments or whitespace characters.</error>
@@ -129,6 +128,7 @@ For updated information, please refer to the latest version of the
    <error code="XS1003">It is a static error if an unescaped left curly bracket appears in a fixed part of a value template without a matching right curly bracket or if an unescaped right curly bracket appears in the fixed part of a value template.</error>
    <error code="XS1004">It is a static error if the step attribute is not specified, and there is no default readable port. It is a static error if the port attribute is not specified, and the step identified has no primary output port.</error>
    <error code="XS1005">It is a static error if the port attribute is not specified, and the step identified has no primary output port.</error>
+   <error code="XS1100">It is a static error if there are any loops in the connections between steps and variables: no step can refer to a variable if there is any sequence of connections from that step that leads back to the input that provides the context node for the expression that defines the value of the variable.</error>
 </error-list>
 </section>
 
