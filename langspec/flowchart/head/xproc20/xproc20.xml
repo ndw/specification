@@ -1815,6 +1815,12 @@ XPath error code.</para>
 <section xml:id="attribute-value-templates">
 <title>Attribute Value Templates</title>
 
+<para>This section describes how (the values of) attribute nodes are
+processed when they are designated attribute value templates. Option
+shortcuts are attribute value templates. In an element syntax summary,
+the value of other such attributes are surrounded by curly brackets. No
+other attributes are attribute value templates.</para>
+
 <para><termdef xml:id="dt-attribute-value-template">In an attribute
 that is designated as an <firstterm>attribute value
 template</firstterm>, an expression can be used by surrounding the
