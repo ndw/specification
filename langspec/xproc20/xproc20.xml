@@ -4332,62 +4332,29 @@ depends on the <tag class="attribute">content-type</tag> and
 “<literal>application/xml</literal>” is assumed.
 </para>
 
-<!--
-<informaltable>
-<thead>
-<tr>
-<td colspan="4"><tag class="attribute">content-type</tag></td>
-</tr>
-<tr>
-<td></td>
-<td><glossterm>XML media type</glossterm></td>
-<td><glossterm>text media type</glossterm></td>
-<td>Other media types</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th align="left"><tag class="attribute">encoding</tag> absent</th>
-<td>OK</td>
-<td>OK</td>
-<td>error</td>
-</tr>
-<tr>
-<th align="left"><tag class="attribute">encoding</tag>
-is “<literal>base64</literal>”.</th>
-<td>error</td>
-<td>OK</td>
-<td>OK</td>
-</tr>
-<tr>
-<th align="left"><tag class="attribute">encoding</tag> is something else.</th>
-<td>error</td>
-<td>implementation-defined</td>
-<td>implementation-defined</td>
-</tr>
-</tbody>
-</informaltable>
--->
+<orderedlist>
+<listitem>
+<para>If an encoding (<xref linkend="inline-encoding-values"/>) is
+specified, the content of the inline is decoded
+(<xref linkend="inline-no-encoded-xml"/>) to produce an sequence
+of bytes (<xref linkend="inline-invalid-content"/>).</para>
+<para>The resulting byte
+sequence (<xref linkend="inline-charset-no-encoding"/>)
+is interpreted according to the
+charset parameter on the content type. If no charset parameter is
+provided, the bytes are interpreted using the UTF-8 charset.</para>
+</listitem>
+<listitem>
+<para>If no encoding is specified, the content <rfc2119>must</rfc2119>
+be XML.</para>
+</listitem>
+</orderedlist>
 
-<para><error code="S1007">It is a
-<glossterm>static error</glossterm> if an encoding is specified
-and the content type is an <glossterm>XML media type</glossterm>.</error>
-</para>
+<para>Several errors can occur:</para>
 
-<para><error code="S1008">It is a <glossterm>static error</glossterm>
-if the content type value specifies a character set and the <tag
-class="attribute">encoding</tag> attribute is absent.</error>
-</para>
-
-<para><error code="S1009">It is a <glossterm>static error</glossterm>
-if an encoding is specified and the content of the <tag>p:inline</tag>
-contains any XML markup.</error> In other words, the entire content
-must be a single text node. CDATA sections and character references do
-not count as markup for this purpose because they will already have
-been replaced by the XML parser that read the pipeline.</para>
-
-<para>If the <tag class="attribute">encoding</tag> attribute is
-present, the content must be decoded. The encoding value
+<orderedlist>
+<listitem xml:id="inline-encoding-values">
+<para>The encoding value
 “<literal>base64</literal>” <rfc2119>must</rfc2119> be supported and
 identifies the content as being base64-encoded.
 <impl>An implementation may
@@ -4396,10 +4363,33 @@ encodings and their names are
 <glossterm>implementation-defined</glossterm>.</impl>
 <error code="S1006">It is a <glossterm>static error</glossterm> if the
 encoding specified is not supported by the implementation.</error>
-<error code="D1005">It is a <glossterm>dynamic error</glossterm> if
+</para>
+</listitem>
+<listitem xml:id="inline-no-encoded-xml">
+<para><error code="S1007">It is a
+<glossterm>static error</glossterm> if an encoding is specified
+and the content type is an <glossterm>XML media type</glossterm>.</error>
+</para>
+<para><error code="S1009">It is a <glossterm>static error</glossterm>
+if an encoding is specified and the content of the <tag>p:inline</tag>
+contains any XML markup.</error> In other words, the entire content
+must be a single text node. CDATA sections and character references do
+not count as markup for this purpose because they will already have
+been replaced by the XML parser that read the pipeline.</para>
+</listitem>
+<listitem xml:id="inline-invalid-content">
+<para><error code="D1005">It is a <glossterm>dynamic error</glossterm> if
 the body is not correctly encoded per the value of the <tag
 class="attribute">encoding</tag> attribute.</error>
 </para>
+</listitem>
+<listitem xml:id="inline-charset-no-encoding">
+<para><error code="S1008">It is a <glossterm>static error</glossterm>
+if the content type value specifies a character set and the <tag
+class="attribute">encoding</tag> attribute is absent.</error>
+</para>
+</listitem>
+</orderedlist>
 
 <para>The interpretation of the (possibily decoded) content
 depends on the <tag class="attribute">content-type</tag> attribute.
